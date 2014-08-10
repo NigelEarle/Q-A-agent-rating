@@ -1,0 +1,47 @@
+<template name="personalization">
+  <div class="personalization-form">
+    <h1>Personalization</h1>
+    <h3>Please Leave Blank If Not Applicable</h3>
+    <form action="#" class="test-form">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Offer additional suggestions</h3>
+        </div>
+        <div class="panel-body">
+          <input type="radio">Yes
+          <input type="radio">No
+
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Provided deadline / disclaimers</h3>
+        </div>
+        <div class="panel-body">
+          <input type="radio">Yes
+          <input type="radio">No
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Provided proper sign off</h3>
+        </div>
+        <div class="panel-body">
+          <input type="radio">Yes
+          <input type="radio">No
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <a href="{{pathFor 'qBenefits'}}">
+          <button type="button" class="btn btn-default">Previous</button>
+        </a>
+        <a href="{{pathFor 'emailProfessionalism'}}">
+          <button type="button" class="btn btn-default">Next</button>
+        </a>
+      </div>
+    </form>
+  </div>
+</template>
