@@ -1,0 +1,36 @@
+<template name="qBenefits">
+  <div class="q-benefits-form">
+    <h1>Q-Benefits</h1>
+    <h3>Please Leave Blank If Not Applicable</h3>
+    <form action="#" class="test-form">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">If recommended Q contracted supplier, did you advise the benfits?</h3>
+        </div>
+        <div class="panel-body">
+          <input type="radio">Yes
+          <input type="radio">No
+
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Were the benefits promoted in an appealing manner?</h3>
+        </div>
+        <div class="panel-body">
+          <input type="radio">Yes
+          <input type="radio">No
+        </div>
+      </div>
+      <div class="btn-group">
+        <a href="{{pathFor 'clarification'}}">
+          <button type="button" class="btn btn-default">Previous</button>
+        </a>
+        <a href="{{pathFor 'personalization'}}">
+          <button type="button" class="btn btn-default">Next</button>
+        </a>
+      </div>
+    </form>
+  </div>
+</template>
