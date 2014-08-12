@@ -1,36 +1,41 @@
 <template name="testNew">
-  <div class="test-new">
-    <h1>Previous Tests</h1>
+  <div class="panel panel-default">
+    <div class="panel-heading">Previous Tests</div>
+
     <table class="table">
-      <tr>
-        <th>Name</th>
-        <th>Region</th>
-        <th>Date</th>
-        <th>Ref Number</th>
-      </tr>
-      <tr>
-        <td>John Shmoe</td>
-        <td>Hong Kong</td>
-        <td>8/12/09</td>
-        <td>#989234</td>
-      </tr>
-      <tr>
-        <td>Karen Osbourne</td>
-        <td>San Francisco</td>
-        <td>09/29/08</td>
-        <td>#575939</td>
-      </tr>
-      <tr>
-        <td>Julie Barnes</td>
-        <td>New York</td>
-        <td>2/06/02</td>
-        <td>#732847</td>
-      </tr>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Region</th>
+          <th>Date</th>
+          <th>Ref Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Shmoe</td>
+          <td>Hong Kong</td>
+          <td>8/12/09</td>
+          <td>#989234</td>
+        </tr>
+        <tr>
+          <td>Karen Osbourne</td>
+          <td>San Francisco</td>
+          <td>09/29/08</td>
+          <td>#575939</td>
+        </tr>
+        <tr>
+          <td>Julie Barnes</td>
+          <td>New York</td>
+          <td>2/06/02</td>
+          <td>#732847</td>
+        </tr>
+      </tbody>
     </table>
   </div>
   <div>
     <h1>Start New Test</h1>
-    <a href="#">
+    <a href="{{pathFor 'agentInfo'}}">
       <button type="button" class="btn btn-primary">NEW</button>
     </a>
   </div>

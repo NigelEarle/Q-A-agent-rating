@@ -1,11 +1,18 @@
 <template name="registration">
   <div class="registration-form" id="accounts-view">
     <h1>Sign Up</h1>
-    <form action="#" id="sign-up-form">
-      <input type="email" id="accounts-email" placeholder="E-mail" autofocus>
-      <input type="password" id="accounts-password" placeholder="Password">
-      <input type="confirm" id="accounts-confirm" placeholder="Confirm Password">
-      <input type="submit">
+    <form action="#" id="sign-up-form" role="form">
+
+      <div class="form-group">
+        <input type="email" id="accounts-email" class="form-control" placeholder="E-mail" autofocus>
+      </div>
+      <div class="form-group">
+        <input type="password" id="accounts-password" class="form-control" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <input type="confirm" id="accounts-confirm" class="form-control" placeholder="Confirm Password">
+      </div>
+      <input type="submit" class="btn btn-default">
     </form>
     <div class="other links">
       <a href="{{pathFor 'login'}}">Login</a>
