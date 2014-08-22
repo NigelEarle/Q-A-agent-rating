@@ -1,57 +1,62 @@
 <template name="greeting">
-  <div class="test-form">
-    <div class="form-category">
-      <h1>Greeting</h1>
-    </div>
-    <div class="intructions">
-      <h3>Please Leave Blank If Not Applicable</h3>
+  <div id="greeting-form" class="test-form">
+    <div class="category">
+      <h1>Phone Inbound</h1>
+      <h2>Greeting</h2>
+      <p>Please Leave Blank If Not Applicable</p>
     </div>
     <form action="#" class="q-form">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Was call answered with in less than 20 seconds</h3>
-        </div>
-        <div class="panel-body">
-          <input type="radio">Yes
-          <input type="radio">No
-
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Proper Greeting Used</h3>
-        </div>
-        <div class="panel-body">
-          <input type="radio">Yes
-          <input type="radio">No
+      <div class="questions">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Was call answered with in less than 20 seconds</h3>
+          </div>
+          <div class="panel-body">
+            <input type="radio">Yes
+            <input type="radio">No
+          </div>
         </div>
       </div>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Provided Name to member</h3>
-        </div>
-        <div class="panel-body">
-          <input type="radio">Yes
-          <input type="radio">No
+      <div class="questions">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Proper Greeting Used</h3>
+          </div>
+          <div class="panel-body">
+            <input type="radio">Yes
+            <input type="radio">No
+          </div>
         </div>
       </div>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Verified The Member</h3>
+      <div class="questions">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Provided Name to member</h3>
+          </div>
+          <div class="panel-body">
+            <input type="radio">Yes
+            <input type="radio">No
+          </div>
         </div>
-        <div class="panel-body">
-          <input type="radio">Yes
-          <input type="radio">No
+       </div>
+
+      <div class="questions">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Verified The Member</h3>
+          </div>
+          <div class="panel-body">
+            <input type="radio">Yes
+            <input type="radio">No
+          </div>
         </div>
       </div>
-      <div class="btn-group">
-        <a href="{{pathFor 'callManagement'}}">
-          <button type="button" class="btn btn-default">Next</button>
-        </a>
-      </div>
+
+      <a href="{{pathFor 'callManagement'}}">
+        <button type="button" class="btn btn-primary">Next</button>
+      </a>
     </form>
   </div>
 </template>
