@@ -1,68 +1,72 @@
 <template name="timeManagement">
-  <div class="test-form">
-    <div class="form-category">
-      <h1>Time Management</h1>
-    </div>
-    <div class="instructions">
-      <h3>Please Leave Blank If Not Applicable</h3>
+  <div id="time-management" class="test-form">
+    <div class="category">
+      <h1>Email Response</h1>
+      <h2>Time Management</h2>
+      <p>Please Leave Blank If Not Applicable</p>
     </div>
     <form action="#" class="q-form">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Request acknowledgment was recieved 30 minutes after placing request via email/phone. </h3>
-        </div>
-        <div class="panel-body">
-          <input type="radio">Yes
-          <input type="radio">No
-
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Were you given a sence of fulfillment / next update timescale?</h3>
-        </div>
-        <div class="panel-body">
-          <input type="radio">Yes
-          <input type="radio">No
+      <div class="questions">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Request acknowledgment was recieved 30 minutes after placing request via email/phone. </h3>
+          </div>
+          <div class="panel-body">
+            <input type="radio">Yes
+            <input type="radio">No
+          </div>
         </div>
       </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Was the fulfillment / next update timescale met?</h3>
-        </div>
-        <div class="panel-body">
-          <input type="radio">Yes
-          <input type="radio">No
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Did you feel you recieved adequate updates during the course of the request fulfillment?</h3>
-        </div>
-        <div class="panel-body">
-          <input type="radio">Yes
-          <input type="radio">No
+      <div class="questions">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Were you given a sence of fulfillment / next update timescale?</h3>
+          </div>
+          <div class="panel-body">
+            <input type="radio">Yes
+            <input type="radio">No
+          </div>
         </div>
       </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">1st respond information within estimated time of response</h3>
+      <div class="questions">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Was the fulfillment / next update timescale met?</h3>
+          </div>
+          <div class="panel-body">
+            <input type="radio">Yes
+            <input type="radio">No
+          </div>
         </div>
-        <div class="panel-body">
-          <input type="radio">Yes
-          <input type="radio">No
+      </div>
+      <div class="questions">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Did you feel you recieved adequate updates during the course of the request fulfillment?</h3>
+          </div>
+          <div class="panel-body">
+            <input type="radio">Yes
+            <input type="radio">No
+          </div>
+        </div>
+      </div>
+      <div class="questions">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">1st respond information within estimated time of response</h3>
+          </div>
+          <div class="panel-body">
+            <input type="radio">Yes
+            <input type="radio">No
+          </div>
         </div>
       </div>
       <div class="btn-group">
+        <a href="{{pathFor 'clarification'}}">
+          <button type="button" class="btn btn-primary">Next</button>
+        </a>
         <a href="{{pathFor 'callProfessionalism'}}">
           <button type="button" class="btn btn-default">Previous</button>
-        </a>
-        <a href="{{pathFor 'clarification'}}">
-          <button type="button" class="btn btn-default">Next</button>
         </a>
       </div>
     </form>
