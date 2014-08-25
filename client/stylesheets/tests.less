@@ -1,4 +1,4 @@
-.test-form {
+.test-form, .pre-form {
 
   padding: 0;
   padding-right: 60px;
@@ -17,26 +17,54 @@
     font-size: 40px;
     font-weight: 200;
   }
-
   p {
     font-size: 20px;
     font-weight: 200;
     text-align: center;
   }
 
-  .questions {
+  .questions, #pre-tests {
     padding-bottom: 20px;
+  }
+
+  input[type="radio"]{
+    margin: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: inline-block;
   }
 
   .btn-group{
     float: right;
   }
 
-  button{
+  button {
     float: right;
     margin: 0 0 0 20px;
     padding: 5px;
     padding-left: 30px;
     padding-right: 30px
+  }
+
+  input[type="submit"]{
+    float: right;
+    // margin-right: 60px;
+    padding: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+}
+
+#start-new{
+
+  button {
+    margin: 0;
+    margin-top: 15px;
+    margin-right: 39.5%;
+    padding: 10px 107px 10px 107px;
+    border: 5px white;
+    box-shadow: 2px 2px 2px black;
+
   }
 }
