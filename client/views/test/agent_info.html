@@ -5,21 +5,22 @@
     <form action="#" id="basic-info-form" role="form">
 
       <div class="form-group">
-        <input type="text" class="form-control" name="agent-name" placeholder="Agent Name" />
+        <input type="text" class="form-control" name="agent-name" placeholder="Agent First Name" autofocus />
       </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" name="agent-name" placeholder="Agent Last Name" />
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" name="agent-name" placeholder="Agent E-Mail" />
+      </div>
+
 
       <div class="form-group">
         <select class="form-control">
            <option value="regionId">Hong Kong</option>
         </select>
-      </div>
-
-      <div class="form-group">
-        <input type="text" class="form-control" name="agent-ref-number" placeholder="Reference #" />
-      </div>
-
-      <div class="form-group">
-        <input type="text" class="form-control" name="agent-test-date" placeholder="Date" />
       </div>
 
       <a href="{{pathFor 'greeting'}}">
