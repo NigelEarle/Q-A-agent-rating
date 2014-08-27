@@ -12,10 +12,10 @@
             <h3 class="panel-title">Was call answered with in less than 20 seconds</h3>
           </div>
           <div class="panel-body">
-            <label for="yes">Yes</label>
-            <input name="yes" type="radio" value="2">
-            <label for="no">No</label>
-            <input name="no" type="radio" value="1">
+            <label for="answered">Yes</label>
+            <input name="answered" type="radio" value="2">
+            <label for="answered">No</label>
+            <input name="answered" type="radio" value="1">
           </div>
         </div>
       </div>
@@ -26,10 +26,10 @@
             <h3 class="panel-title">Proper Greeting Used</h3>
           </div>
           <div class="panel-body">
-            <label for="yes">Yes</label>
-            <input name="yes" type="radio" value="2">
-            <label for="no">No</label>
-            <input name="no" type="radio" value="1">
+            <label for="greeting">Yes</label>
+            <input name="greeting" type="radio" value="2">
+            <label for="greeting">No</label>
+            <input name="greeting" type="radio" value="1">
           </div>
         </div>
       </div>
@@ -40,10 +40,10 @@
             <h3 class="panel-title">Provided Name to member</h3>
           </div>
           <div class="panel-body">
-            <label for="yes">Yes</label>
-            <input name="yes" type="radio" value="2">
-            <label for="no">No</label>
-            <input name="no" type="radio" value="1">
+            <label for="name">Yes</label>
+            <input name="name" type="radio" value="2">
+            <label for="name">No</label>
+            <input name="name" type="radio" value="1">
           </div>
         </div>
        </div>
@@ -54,16 +54,16 @@
             <h3 class="panel-title">Verified The Member</h3>
           </div>
           <div class="panel-body">
-            <label for="yes">Yes</label>
-            <input name="yes" type="radio" value="2">
-            <label for="no">No</label>
-            <input name="no" type="radio" value="1">
+            <label for="member">Yes</label>
+            <input name="member" type="radio" value="2">
+            <label for="member">No</label>
+            <input name="member" type="radio" value="1">
           </div>
         </div>
       </div>
 
       <a href="{{pathFor 'callManagement'}}">
-        <button type="button" class="btn btn-primary">Next</button>
+        <input type="submit" class="btn btn-primary" value="next" >
       </a>
     </form>
   </div>
