@@ -5,17 +5,21 @@
       <h2>Greeting</h2>
       <p>Please Leave Blank If Not Applicable</p>
     </div>
-    <form action="#" class="q-form">
+    <form action="#" class="q-form" name="greeting">
       <div class="questions">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">Was call answered with in less than 20 seconds</h3>
           </div>
           <div class="panel-body">
-            <label for="answered">Yes</label>
-            <input name="answered" type="radio" value="2">
-            <label for="answered">No</label>
-            <input name="answered" type="radio" value="1">
+            <label for="greeting[q1][score]">Yes</label>
+            <input name="greeting[q1][score]" type="radio" value="2">
+            <label for="greeting[q1][score]">No</label>
+            <input name="greeting[q1][score]" type="radio" value="1">
+            <label for="greeting[q1][score]">N/A</label>
+            <input type="radio" name="greeting[q1][score]" value="0">
+            <input type="hidden" name="greeting[q1][maxScore]" value="2">
+            <input type="hidden" name="greeting[q1][question]" value="Was call answered with in less than 20 seconds">
           </div>
         </div>
       </div>
@@ -26,10 +30,14 @@
             <h3 class="panel-title">Proper Greeting Used</h3>
           </div>
           <div class="panel-body">
-            <label for="greeting">Yes</label>
-            <input name="greeting" type="radio" value="2">
-            <label for="greeting">No</label>
-            <input name="greeting" type="radio" value="1">
+            <label for="greeting[q2][score]">Yes</label>
+            <input name="greeting[q2][score]" type="radio" value="2">
+            <label for="greeting[q2][score]">No</label>
+            <input name="greeting[q2][score]" type="radio" value="1">
+            <label for="greeting[q2][score]">N/A</label>
+            <input name="greeting[q2][score]" type="radio" value="0">
+            <input type="hidden" name="greeting[q2][maxScore]" value="2">
+            <input type="hidden" name="greeting[q2][question]" value="Proper Greeting Used">
           </div>
         </div>
       </div>
@@ -40,10 +48,14 @@
             <h3 class="panel-title">Provided Name to member</h3>
           </div>
           <div class="panel-body">
-            <label for="name">Yes</label>
-            <input name="name" type="radio" value="2">
-            <label for="name">No</label>
-            <input name="name" type="radio" value="1">
+            <label for="greeting[q3][score]">Yes</label>
+            <input name="greeting[q3][score]" type="radio" value="2">
+            <label for="greeting[q3][score]">No</label>
+            <input name="greeting[q3][score]" type="radio" value="1">
+            <label for="greeting[q3][score]">N/A</label>
+            <input name="greeting[q3][score]" type="radio"  value="0">
+            <input type="hidden" name="greeting[q3][maxScore]" value="2">
+            <input type="hidden" name="greeting[q3][question]" value="Provided Name to member">
           </div>
         </div>
        </div>
@@ -54,17 +66,18 @@
             <h3 class="panel-title">Verified The Member</h3>
           </div>
           <div class="panel-body">
-            <label for="member">Yes</label>
-            <input name="member" type="radio" value="2">
-            <label for="member">No</label>
-            <input name="member" type="radio" value="1">
+            <label for="greeting[q4][score]">Yes</label>
+            <input name="greeting[q4][score]" type="radio" value="2">
+            <label for="greeting[q4][score]">No</label>
+            <input name="greeting[q4][score]" type="radio" value="1">
+            <label for="greeting[q4][score]">N/A</label>
+            <input name="greeting[q4][score]" type="radio" value="0">
+            <input type="hidden" name="greeting[q4][maxScore]" value="2">
+            <input type="hidden" name="greeting[q4][question]" value="Verified The Member">
           </div>
         </div>
       </div>
-
-      <a href="{{pathFor 'callManagement'}}">
-        <input type="submit" class="btn btn-primary" value="next" >
-      </a>
+      <input type="submit" class="btn btn-primary" value="Next">
     </form>
   </div>
 </template>

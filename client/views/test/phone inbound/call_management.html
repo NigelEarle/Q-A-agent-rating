@@ -5,17 +5,21 @@
       <h2>Call Management</h2>
       <p>Please Provide Best Answer. Leave Blank If Not Applicable</p>
     </div>
-    <form action="#" class="q-form">
+    <form action="#" class="q-form" name="callManagement">
       <div class="questions">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">LSM address the member in an appropriate manner</h3>
           </div>
           <div class="panel-body">
-            <label for="lsm">Yes</label>
-            <input name="lsm" type="radio" value="2">
-            <label for="lsm">No</label>
-            <input name="lsm" type="radio" value="1">
+            <label for="callManagement[q1][score]">Yes</label>
+            <input name="callManagement[q1][score]" type="radio" value="2">
+            <label for="callManagement[q1][score]">No</label>
+            <input name="callManagement[q1][score]" type="radio" value="1">
+            <label for="callManagement[q1][score]">N/A</label>
+            <input type="radio" name="callManagement[q1][score]" value="0">
+            <input type="hidden" name="callManagement[q1][maxScore]" value="2">
+            <input type="hidden" name="callManagement[q1][question]" value="LSM address the member in an appropriate manner">
           </div>
         </div>
       </div>
@@ -25,10 +29,14 @@
             <h3 class="panel-title">Ask member to be placed on hold in an appropriate manner</h3>
           </div>
           <div class="panel-body">
-            <label for="hold">Yes</label>
-            <input name="hold" type="radio" value="2">
-            <label for="hold">No</label>
-            <input name="hold" type="radio" value="1">
+            <label for="callManagement[q2][score]">Yes</label>
+            <input name="callManagement[q2][score]" type="radio" value="2">
+            <label for="callManagement[q2][score]">No</label>
+            <input name="callManagement[q2][score]" type="radio" value="1">
+            <label for="callManagement[q2][score]">N/A</label>
+            <input type="radio" name="callManagement[q2][score]" value="0">
+            <input type="hidden" name="callManagement[q2][maxScore]" value="2">
+            <input type="hidden" name="callManagement[q2][question]" value="Ask member to be placed on hold in an appropriate manner">
           </div>
         </div>
       </div>
@@ -38,12 +46,16 @@
             <h3 class="panel-title">Usage of NATO</h3>
           </div>
           <div class="panel-body">
-            <label for="nato">Yes The Whole Time</label>
-            <input name="nato" type="radio" value="3">
-            <label for="nato">Just Some</label>
-            <input name="nato" type="radio" value="2">
-            <label for="nato">No</label>
-            <input name="nato" type="radio" value="1">
+            <label for="callManagement[q3][score]">Yes The Whole Time</label>
+            <input name="callManagement[q3][score]" type="radio" value="3">
+            <label for="callManagement[q3][score]">Just Some</label>
+            <input name="callManagement[q3][score]" type="radio" value="2">
+            <label for="callManagement[q3][score]">No</label>
+            <input name="callManagement[q3][score]" type="radio" value="1">
+            <label for="callManagement[q3][score]">N/A</label>
+            <input type="radio" name="callManagement[q3][score]" value="0">
+            <input type="hidden" name="callManagement[q3][maxScore]" value="3">
+            <input type="hidden" name="callManagement[q3][question]" value="Usage of NATO">
           </div>
         </div>
       </div>
@@ -53,14 +65,19 @@
             <h3 class="panel-title">Used effective questioning for clarification</h3>
           </div>
           <div class="panel-body">
-            <label for="clarification">Used Effectively</label>
-            <input name="clarification" type="radio" value="4">
-            <label for="clarification">Can Ask More</label>
-            <input name="clarification" type="radio" value="3">
-            <label for="clarification">Needs Improvement</label>
-            <input name="clarification" type="radio" value="2">
-            <label for="clarification">None</label>
-            <input name="clarification" type="radio" value="1">
+            <label for="callManagement[q4][score]">Used Effectively</label>
+            <input name="callManagement[q4][score]" type="radio" value="4">
+            <label for="callManagement[q4][score]">Can Ask More</label>
+            <input name="callManagement[q4][score]" type="radio" value="3">
+            <label for="callManagement[q4][score]">Needs Improvement</label>
+            <input name="callManagement[q4][score]" type="radio" value="2">
+            <label for="callManagement[q4][score]">None</label>
+            <input name="callManagement[q4][score]" type="radio" value="1">
+            <label for="callManagement[q4][score]">N/A</label>
+            <input name="callManagement[q4][score]" type="radio" value="0">
+            <input name="callManagement[q4][maxScore]" type="hidden" value="4">
+            <input type="hidden" name="callManagement[q4][question]" value="Used effective questioning for clarification">
+
           </div>
         </div>
       </div>
@@ -70,14 +87,19 @@
             <h3 class="panel-title">Going the extra mile to upsell appropritely</h3>
           </div>
           <div class="panel-body">
-            <label for="upsell">Provided Suitable Upsell</label>
-            <input type="radio" name="upsell" value="4">
-            <label for="upsell">Provided Some</label>
-            <input type="radio" name="upsell" value="3">
-            <label for="upsell">Provided Non-suitable</label>
-            <input type="radio" name="upsell" value="2">
-            <label for="upsell">Did Not Upsell</label>
-            <input type="radio" name="upsell" value="1">
+            <label for="callManagement[q5][score]">Provided Suitable Upsell</label>
+            <input type="radio" name="callManagement[q5][score]" value="4">
+            <label for="callManagement[q5][score]">Provided Some</label>
+            <input type="radio" name="callManagement[q5][score]" value="3">
+            <label for="callManagement[q5][score]">Provided Non-suitable</label>
+            <input type="radio" name="callManagement[q5][score]" value="2">
+            <label for="callManagement[q5][score]">Did Not Upsell</label>
+            <input type="radio" name="callManagement[q5][score]" value="1">
+            <label for="callManagement[q5][score]">N/A</label>
+            <input type="radio" name="callManagement[q5][score]" value="0">
+            <input type="hidden" name="callManagement[q5][maxScore]" value="4">
+            <input type="hidden" name="callManagement[q5][question]" value="Going the extra mile to upsell appropritely">
+
           </div>
         </div>
       </div>
@@ -87,27 +109,37 @@
             <h3 class="panel-title">Provided appropriate options and knowledgable information</h3>
           </div>
           <div class="panel-body">
-            <label for="options">Excellent</label>
-            <input type="radio" name="options" value="4">
-            <label for="options">Good</label>
-            <input type="radio" name="options" value="3">
-            <label for="options">Can Do Better</label>
-            <input type="radio" name="options" value="2">
-            <label for="options">Bad</label>
-            <input type="radio" name="options" value="1">
+            <label for="callManagement[q6][score]">Excellent</label>
+            <input type="radio" name="callManagement[q6][score]" value="4">
+            <label for="callManagement[q6][score]">Good</label>
+            <input type="radio" name="callManagement[q6][score]" value="3">
+            <label for="callManagement[q6][score]">Can Do Better</label>
+            <input type="radio" name="callManagement[q6][score]" value="2">
+            <label for="callManagement[q6][score]">Bad</label>
+            <input type="radio" name="callManagement[q6][score]" value="1">
+            <label for="callManagement[q6][score]">N/A</label>
+            <input type="radio" name="callManagement[q6][score]" value="0">
+            <input type="hidden" name="callManagement[q6][maxScore]" value="4">
+            <input type="hidden" name="callManagement[q6][question]" value="Provided appropriate options and knowledgable information">
+
+
           </div>
         </div>
       </div>
       <div class="questions">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Ask member to be placed on hold in a polite manner</h3>
+            <h3 class="panel-title">Asked member to be placed on hold in a polite manner</h3>
           </div>
           <div class="panel-body">
-            <label for="hold">Yes</label>
-            <input type="radio" name="hold" value="2">
-            <label for="hold">No</label>
-            <input type="radio" name="hold" value="1">
+            <label for="callManagement[q7][score]">Yes</label>
+            <input type="radio" name="callManagement[q7][score]" value="2">
+            <label for="callManagement[q7][score]">No</label>
+            <input type="radio" name="callManagement[q7][score]" value="1">
+            <label for="callManagement[q7][score]">N/A</label>
+            <input type="radio" name="callManagement[q7][score]" value="0">
+            <input type="hidden" name="callManagement[q7][maxScore]" value="2">
+            <input type="hidden" name="callManagement[q7][question]" value="Asked member to be placed on hold in a polite manner">
           </div>
         </div>
       </div>
@@ -117,21 +149,23 @@
             <h3 class="panel-title">Was the hold time more than 2 minutes</h3>
           </div>
           <div class="panel-body">
-            <label for="two">Yes</label>
-            <input type="radio" name="two" value="2">
-            <label for="two">No</label>
-            <input type="radio" name="two" value="1">
+            <label for="callManagement[q8][score]">Yes</label>
+            <input type="radio" name="callManagement[q8][score]" value="2">
+            <label for="callManagement[q8][score]">No</label>
+            <input type="radio" name="callManagement[q8][score]" value="1">
+            <label for="callManagement[q8][score]">N/A</label>
+            <input type="radio" name="callManagement[q8][score]" value="0">
+            <input type="hidden" name="callManagement[q8][maxScore]" value="2">
+            <input type="hidden" name="callManagement[q8][question]" value="Was the hold time more than 2 minutes?">
+
+
           </div>
         </div>
       </div>
-      <div class="btn-group">
-        <a href="{{pathFor 'endCall'}}">
-          <button type="button" class="btn btn-primary">Next</button>
-        </a>
-        <a href="{{pathFor 'greeting'}}">
-          <button type="button" class="btn btn-default">Previous</button>
-        </a>
-      </div>
+      <input type="submit" class="btn btn-primary" value="Next">
+      <a href="{{pathFor 'greeting'}}">
+        <button type="button" class="btn btn-default">Previous</button>
+      </a>
     </form>
   </div>
 </template>

@@ -5,17 +5,21 @@
       <h2>End Call</h2>
       <p>Please Answer Yes Or No. Leave Blank If Not Applicable</p>
     </div>
-    <form action="#" class="q-form">
+    <form action="#" class="q-form" name="endCall">
       <div class="questions">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">Offered further assistance</h3>
           </div>
           <div class="panel-body">
-            <label for="assistance">Yes</label>
-            <input type="radio" name="assistance" value="2">
-            <label for="assistance">No</label>
-            <input type="radio" name="assistance" value="1">
+            <label for="endCall[q1][score]">Yes</label>
+            <input type="radio" name="endCall[q1][score]" value="2">
+            <label for="endCall[q1][score]">No</label>
+            <input type="radio" name="endCall[q1][score]" value="1">
+            <label for="endCall[q1][score]">N/A</label>
+            <input type="radio" name="endCall[q1][score]" value="0">
+            <input type="hidden" name="endCall[q1][maxScore]" value="2">
+            <input type="hidden" name="endCall[q1][question]" value="Offered further assistance">
           </div>
         </div>
       </div>
@@ -25,23 +29,31 @@
             <h3 class="panel-title">Offered contact method</h3>
           </div>
           <div class="panel-body">
-            <label for="method">Yes</label>
-            <input type="radio" name="method" value="2">
-            <label for="method">No</label>
-            <input type="radio" name="method" value="1">
+            <label for="endCall[q2][score]">Yes</label>
+            <input type="radio" name="endCall[q2][score]" value="2">
+            <label for="endCall[q2][score]">No</label>
+            <input type="radio" name="endCall[q2][score]" value="1">
+            <label for="endCall[q2][score]">N/A</label>
+            <input type="radio" name="endCall[q2][score]" value="0">
+            <input type="hidden" name="endCall[q2][maxScore]" value="2">
+            <input type="hidden" name="endCall[q2][question]" value="Offered contact method">
           </div>
         </div>
       </div>
       <div class="questions">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Summarization was provided for clarification / plan of action</h3>
+            <h3 class="panel-title">Summarization was provided for clarification/plan of action</h3>
           </div>
           <div class="panel-body">
-            <label for="plan">Yes</label>
-            <input type="radio" name="plan" value="2">
-            <label for="plan">No</label>
-            <input type="radio" name="plan" value="1">
+            <label for="endCall[q3][score]">Yes</label>
+            <input type="radio" name="endCall[q3][score]" value="2">
+            <label for="endCall[q3][score]">No</label>
+            <input type="radio" name="endCall[q3][score]" value="1">
+            <label for="endCall[q3][score]">N/A</label>
+            <input type="radio" name="endCall[q3][score]" value="0">
+            <input type="hidden" name="endCall[q3][maxScore]" value="2">
+            <input type="hidden" name="endCall[q3][question]" value="Summarization was provided for clarification/plan of action">
           </div>
         </div>
       </div>
@@ -51,10 +63,14 @@
             <h3 class="panel-title">Provided an estimated time frame for response</h3>
           </div>
           <div class="panel-body">
-            <label for="estimated">Yes</label>
-            <input type="radio" name="estimated" value="2">
-            <label for="estimated">No</label>
-            <input type="radio" name="estimated" value="1">
+            <label for="endCall[q4][score]">Yes</label>
+            <input type="radio" name="endCall[q4][score]" value="2">
+            <label for="endCall[q4][score]">No</label>
+            <input type="radio" name="endCall[q4][score]" value="1">
+            <label for="endCall[q4][score]">N/A</label>
+            <input type="radio" name="endCall[q4][score]" value="0">
+            <input type="hidden" name="endCall[q4][maxScore]" value="2">
+            <input type="hidden" name="endCall[q4][question]" value="Provided an estimated time frame for response">
           </div>
         </div>
       </div>
@@ -64,21 +80,21 @@
             <h3 class="panel-title">End the call with proper closing</h3>
           </div>
           <div class="panel-body">
-            <label for="closing">Yes</label>
-            <input type="radio" name="closing" value="2">
-            <label for="closing">No</label>
-            <input type="radio" name="closing" value="1">
+            <label for="endCall[q5][score]">Yes</label>
+            <input type="radio" name="endCall[q5][score]" value="2">
+            <label for="endCall[q5][score]">No</label>
+            <input type="radio" name="endCall[q5][score]" value="1">
+            <label for="endCall[q5][score]">N/A</label>
+            <input type="radio" name="endCall[q5][score]" value="0">
+            <input type="hidden" name="endCall[q5][maxScore]" value="2">
+            <input type="hidden" name="endCall[q5][question]" value="End the call with proper closing">
           </div>
         </div>
       </div>
-      <div class="btn-group">
-        <a href="{{pathFor 'callProfessionalism'}}">
-          <button type="button" class="btn btn-primary">Next</button>
-        </a>
-        <a href="{{pathFor 'callManagement'}}">
-          <button type="button" class="btn btn-default">Previous</button>
-        </a>
-      </div>
+      <input type="submit" class="btn btn-success" value="Submit Category">
+      <a href="{{pathFor 'callManagement'}}">
+        <button type="button" class="btn btn-default">Previous</button>
+      </a>
     </form>
   </div>
 </template>

@@ -5,30 +5,38 @@
       <h2>Personalization</h2>
       <p>Please Leave Blank If Not Applicable</p>
     </div>
-    <form action="#" class="q-form">
+    <form action="#" class="q-form" name="personalization">
       <div class="questions">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">Offer additional suggestions</h3>
           </div>
           <div class="panel-body">
-            <label for="suggestions">Yes</label>
-            <input type="radio" name="suggestions" value="2">
-            <label for="suggestions">No</label>
-            <input type="radio" name="suggestions" value="1">
+            <label for="personalization[q1][score]">Yes</label>
+            <input type="radio" name="personalization[q1][score]" value="2">
+            <label for="personalization[q1][score]">No</label>
+            <input type="radio" name="personalization[q1][score]" value="1">
+            <label for="personalization[q1][score]">N/A</label>
+            <input type="radio" name="personalization[q1][score]" value="1">
+            <input type="hidden" name="personalization[q1][maxScore]" value="2">
+            <input type="hidden" name="personalization[q1][questions]" value="Offer additional suggestions">
           </div>
         </div>
       </div>
       <div class="questions">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Provided deadline / disclaimers</h3>
+            <h3 class="panel-title">Provided deadline/disclaimers</h3>
           </div>
           <div class="panel-body">
-            <label for="deadline">Yes</label>
-            <input type="radio" name="deadline" value="2">
-            <label for="deadline">No</label>
-            <input type="radio" name="deadline" value="1">
+            <label for="personalization[q2][score]">Yes</label>
+            <input type="radio" name="personalization[q2][score]" value="2">
+            <label for="personalization[q2][score]">No</label>
+            <input type="radio" name="personalization[q2][score]" value="1">
+            <label for="personalization[q2][score]">N/A</label>
+            <input type="radio" name="personalization[q2][score]" value="0">
+            <input type="hidden" name="personalization[q2][maxScore]" value="2">
+            <input type="hidden" name="personalization[q2][question]" value="Provided deadline/disclaimers">
           </div>
         </div>
       </div>
@@ -38,22 +46,21 @@
             <h3 class="panel-title">Provided proper sign off</h3>
           </div>
           <div class="panel-body">
-            <label for="signOff">Yes</label>
-            <input type="radio" name="signOff" value="2">
-            <label for="signOff">No</label>
-            <input type="radio" name="signOff" value="1">
+            <label for="personalization[q3][score]">Yes</label>
+            <input type="radio" name="personalization[q3][score]" value="2">
+            <label for="personalization[q3][score]">No</label>
+            <input type="radio" name="personalization[q3][score]" value="1">
+            <label for="personalization[q3][score]">N/A</label>
+            <input type="radio" name="personalization[q3][score]" value="0">
+            <input type="hidden" name="personalization[q3][maxScore]" value="2">
+            <input type="hidden" name="personalization[q3][question]" value="Provided proper sign off">
           </div>
         </div>
       </div>
-
-      <div class="btn-group">
-        <a href="{{pathFor 'emailProfessionalism'}}">
-          <button type="button" class="btn btn-primary">Next</button>
-        </a>
-        <a href="{{pathFor 'qBenefits'}}">
-          <button type="button" class="btn btn-default">Previous</button>
-        </a>
-      </div>
+      <input type="submit" class="btn btn-success" value="Submit Category">
+      <a href="{{pathFor 'qBenefits'}}">
+        <button type="button" class="btn btn-default">Previous</button>
+      </a>
     </form>
   </div>
 </template>
