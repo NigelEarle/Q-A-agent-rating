@@ -5,17 +5,21 @@
       <h2>Time Management</h2>
       <p>Please Leave Blank If Not Applicable</p>
     </div>
-    <form action="#" class="q-form">
+    <form action="#" class="q-form" name="timeManagement">
       <div class="questions">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Request acknowledgment was recieved 30 minutes after placing request via email/phone. </h3>
+            <h3 class="panel-title">Request acknowledgment was recieved 30 minutes after placing request via email/phone.</h3>
           </div>
           <div class="panel-body">
-            <label for="yes">Yes</label>
-            <input type="radio" name="yes" value="2">
-            <label for="no">No</label>
-            <input type="radio" name="no" value="1">
+            <label for="timeManagement[q1][score]">Yes</label>
+            <input type="radio" name="timeManagement[q1][score]" value="2">
+            <label for="timeManagement[q1][score]">No</label>
+            <input type="radio" name="timeManagement[q1][score]" value="1">
+            <label for="timeManagement[q1][score]">N/A</label>
+            <input type="radio" name="timeManagement[q1][score]" value="0">
+            <input type="hidden" name="timeManagement[q1][maxScore]" value="2">
+            <input type="hidden" name="timeManagement[q1][question]" value="Request acknowledgment was recieved 30 minutes after placing request via email/phone.">
           </div>
         </div>
       </div>
@@ -25,10 +29,14 @@
             <h3 class="panel-title">Were you given a sence of fulfillment / next update timescale?</h3>
           </div>
           <div class="panel-body">
-            <label for="yes">Yes</label>
-            <input type="radio" name="yes" value="2">
-            <label for="no">No</label>
-            <input type="radio" name="no" value="1">
+            <label for="timeManagement[q2][score]">Yes</label>
+            <input type="radio" name="timeManagement[q2][score]" value="2">
+            <label for="timeManagement[q2][score]">No</label>
+            <input type="radio" name="timeManagement[q2][score]" value="1">
+            <label for="timeManagement[q2][score]">N/A</label>
+            <input type="radio" name="timeManagement[q2][score]" value="0">
+            <input type="hidden" name="timeManagement[q2][maxScore]" value="2">
+            <input type="hidden" name="timeManagement[q2][question]" value="Were you given a sence of fulfillment / next update timescale?">
           </div>
         </div>
       </div>
@@ -38,10 +46,17 @@
             <h3 class="panel-title">Was the fulfillment / next update timescale met?</h3>
           </div>
           <div class="panel-body">
-            <label for="yes">Yes</label>
-            <input type="radio" name="yes" value="2">
-            <label for="no">No</label>
-            <input type="radio" name="no" value="1">
+            <label for="timeManagement[q3][score]">Yes</label>
+            <input type="radio" name="timeManagement[q3][score]" value="2">
+            <label for="timeManagement[q3][score]">No</label>
+            <input type="radio" name="timeManagement[q3][score]" value="1">
+            <label for="timeManagement[q3][score]">N/A</label>
+            <input type="radio" name="timeManagement[q3][score]" value="0">
+            <input type="hidden" name="timeManagement[q3][maxScore]" value="2">
+            <input type="hidden" name="timeManagement[q3][question]" value="Was the fulfillment / next update timescale met?">
+
+
+
           </div>
         </div>
       </div>
@@ -51,10 +66,14 @@
             <h3 class="panel-title">Did you feel you recieved adequate updates during the course of the request fulfillment?</h3>
           </div>
           <div class="panel-body">
-            <label for="yes">Yes</label>
-            <input type="radio" name="yes" value="2">
-            <label for="no">No</label>
-            <input type="radio" name="no" value="1">
+            <label for="timeManagement[q4][score]">Yes</label>
+            <input type="radio" name="timeManagement[q4][score]" value="2">
+            <label for="timeManagement[q4][score]">No</label>
+            <input type="radio" name="timeManagement[q4][score]" value="1">
+            <label for="timeManagement[q4][score]">N/A</label>
+            <input type="radio" name="timeManagement[q4][score]" value="0">
+            <input type="hidden" name="timeManagement[q4][maxScore]" value="2">
+            <input type="hidden" name="timeManagement[q4][question]" value="Did you feel you recieved adequate updates during the course of the request fulfillment?">
           </div>
         </div>
       </div>
@@ -64,21 +83,22 @@
             <h3 class="panel-title">1st respond information within estimated time of response</h3>
           </div>
           <div class="panel-body">
-            <label for="yes">Yes</label>
-            <input type="radio" name="yes" value="2">
-            <label for="no">No</label>
-            <input type="radio" name="no" value="1">
+            <label for="timeManagement[q5][score]">Yes</label>
+            <input type="radio" name="timeManagement[q5][score]" value="2">
+            <label for="timeManagement[q5][score]">No</label>
+            <input type="radio" name="timeManagement[q5][score]" value="1">
+            <label for="timeManagement[q5][score]">N/A</label>
+            <input type="radio" name="timeManagement[q5][score]" value="0">
+            <input type="hidden" name="timeManagement[q5][maxScore]" value="2">
+            <input type="hidden" name="timeManagement[q5][question]" value="1st respond information within estimated time of response">
           </div>
         </div>
       </div>
-      <div class="btn-group">
-        <a href="{{pathFor 'clarification'}}">
-          <button type="button" class="btn btn-primary">Next</button>
-        </a>
-        <a href="{{pathFor 'callProfessionalism'}}">
-          <button type="button" class="btn btn-default">Previous</button>
-        </a>
-      </div>
+      <input type="submit" class="btn btn-primary" value="Next">
+
+      <a href="{{pathFor 'callProfessionalism'}}">
+        <button type="button" class="btn btn-default">Previous</button>
+      </a>
     </form>
   </div>
 </template>

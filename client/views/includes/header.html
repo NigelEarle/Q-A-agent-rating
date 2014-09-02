@@ -1,23 +1,56 @@
 <template name="header">
   <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Quintessentially</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          {{#if currentUser}}<li><a href="#">Sign Out</a></li>
-          {{/if}}
-        </ul>
-      </div>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Quintessentially</a>
     </div>
-  </nav>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Phone Inbound <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="{{pathFor 'greeting'}}">Greeting</a></li>
+            <li class="divider"></li>
+            <li><a href="{{pathFor 'callManagement'}}">Call Management</a></li>
+            <li class="divider"></li>
+            <li><a href="{{pathFor 'endCall'}}">End Call</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Call Experience <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="{{pathFor 'callProfessionalism'}}">Call Professionalism</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Email Response <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="{{pathFor 'timeManagement'}}">Time Management</a></li>
+            <li class="divider"></li>
+            <li><a href="{{pathFor 'clarification'}}">Clarification</a></li>
+            <li class="divider"></li>
+            <li><a href="{{pathFor 'qBenefits'}}">Q Benefits</a></li>
+            <li class="divider"></li>
+            <li><a href="{{pathFor 'personalization'}}">Personalization</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Email Experience <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="{{pathFor 'emailProfessionalism'}}">Email Professionalism</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 </template>

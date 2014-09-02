@@ -5,21 +5,25 @@
       <h2>Email Professionalism</h2>
       <p>Please Provide The Best Answer. Leave Blank If Not Applicable</p>
     </div>
-    <form action="#" class="q-form">
+    <form action="#" class="q-form" name="emailProfessionalism">
       <div class="questions">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">How would rate the overall speed of response to your request?</h3>
           </div>
           <div class="panel-body">
-            <label for="excellent">Excellent</label>
-            <input type="radio" name="excellent" value="4">
-            <label for="good">Good</label>
-            <input type="radio" name="good" value="3">
-            <label for="better">Can Do Better</label>
-            <input type="radio" name="better" value="2">
-            <label for="bad">Bad</label>
-            <input type="radio" name="bad" value="1">
+            <label for="emailProfessionalism[q1][score]">Excellent</label>
+            <input type="radio" name="emailProfessionalism[q1][score]" value="4">
+            <label for="emailProfessionalism[q1][score]">Good</label>
+            <input type="radio" name="emailProfessionalism[q1][score]" value="3">
+            <label for="emailProfessionalism[q1][score]">Can Do Better</label>
+            <input type="radio" name="emailProfessionalism[q1][score]" value="2">
+            <label for="emailProfessionalism[q1][score]">Bad</label>
+            <input type="radio" name="emailProfessionalism[q1][score]" value="1">
+            <label for="emailProfessionalism[q1][score]">N/A</label>
+            <input type="radio" name="emailProfessionalism[q1][score]" value="0">
+            <input type="hidden" name="emailProfessionalism[q1][maxScore]" value="4">
+            <input type="hidden" name="emailProfessionalism[q1][question]" value="How would rate the overall speed of response to your request?">
           </div>
         </div>
       </div>
@@ -29,14 +33,18 @@
             <h3 class="panel-title">How satisfied were you with how your requests were fulfilled?</h3>
           </div>
           <div class="panel-body">
-            <label for="excellent">Excellent</label>
-            <input type="radio" name="excellent" value="4">
-            <label for="good">Good</label>
-            <input type="radio" name="good" value="3">
-            <label for="better">Can Do Better</label>
-            <input type="radio" name="better" value="2">
-            <label for="bad">Bad</label>
-            <input type="radio" name="bad" value="1">
+            <label for="emailProfessionalism[q2][score]">Excellent</label>
+            <input type="radio" name="emailProfessionalism[q2][score]" value="4">
+            <label for="emailProfessionalism[q2][score]">Good</label>
+            <input type="radio" name="emailProfessionalism[q2][score]" value="3">
+            <label for="emailProfessionalism[q2][score]">Can Do Better</label>
+            <input type="radio" name="emailProfessionalism[q2][score]" value="2">
+            <label for="emailProfessionalism[q2][score]">Bad</label>
+            <input type="radio" name="emailProfessionalism[q2][score]" value="1">
+            <label for="emailProfessionalism[q2][score]">N/A</label>
+            <input type="radio" name="emailProfessionalism[q2][score]" value="0">
+            <input type="hidden" name="emailProfessionalism[q2][maxScore]" value="4">
+            <input type="hidden" name="emailProfessionalism[q2][question]" value="How satisfied were you with how your requests were fulfilled?">
           </div>
         </div>
       </div>
@@ -46,10 +54,14 @@
             <h3 class="panel-title">Did you sence the LSM took sufficient ownership of responsibility for your request?</h3>
           </div>
           <div class="panel-body">
-            <label for="yes">Yes</label>
-            <input type="radio" name="yes" value="2">
-            <label for="no">No</label>
-            <input type="radio" name="no" value="1">
+            <label for="emailProfessionalism[q3][score]">Yes</label>
+            <input type="radio" name="emailProfessionalism[q3][score]" value="2">
+            <label for="emailProfessionalism[q3][score]">No</label>
+            <input type="radio" name="emailProfessionalism[q3][score]" value="1">
+            <label for="emailProfessionalism[q3][score]">N/A</label>
+            <input type="radio" name="emailProfessionalism[q3][score]" value="0">
+            <input type="hidden" name="emailProfessionalism[q3][maxScore]" value="2">
+            <input type="hidden" name="emailProfessionalism[q3][question]" value="Did you sence the LSM took sufficient ownership of responsibility for your request?">
           </div>
         </div>
       </div>
@@ -59,14 +71,18 @@
             <h3 class="panel-title">Spelled checked and grammar checked</h3>
           </div>
           <div class="panel-body">
-            <label for="excellent">Excellent</label>
-            <input type="radio" name="excellent" value="4">
-            <label for="good">Good</label>
-            <input type="radio" name="good" value="3">
-            <label for="better">Can Do Better</label>
-            <input type="radio" name="better" value="2">
-            <label for="bad">Bad</label>
-            <input type="radio" name="bad" value="1">
+            <label for="emailProfessionalism[q4][score]">Excellent</label>
+            <input type="radio" name="emailProfessionalism[q4][score]" value="4">
+            <label for="emailProfessionalism[q4][score]">Good</label>
+            <input type="radio" name="emailProfessionalism[q4][score]" value="3">
+            <label for="emailProfessionalism[q4][score]">Can Do Better</label>
+            <input type="radio" name="emailProfessionalism[q4][score]" value="2">
+            <label for="emailProfessionalism[q4][score]">Bad</label>
+            <input type="radio" name="emailProfessionalism[q4][score]" value="1">
+            <label for="emailProfessionalism[q4][score]">N/A</label>
+            <input type="radio" name="emailProfessionalism[q4][score]" value="0">
+            <input type="hidden" name="emailProfessionalism[q4][maxScore]" value="4">
+            <input type="hidden" name="emailProfessionalism[q4][question]" value="Spelled checked and grammar checked">
           </div>
         </div>
       </div>
@@ -76,26 +92,26 @@
             <h3 class="panel-title">If handled by multiple LSM - how consistent was your service experience?</h3>
           </div>
           <div class="panel-body">
-            <label for="consistent">Very consistent</label>
-            <input type="radio" name="consistent" value="4">
-            <label for="difference">Can feel the difference</label>
-            <input type="radio" name="difference" value="3">
-            <label for="repeat">I had to repeat myself</label>
-            <input type="radio" name="repeat" value="2">
-            <label for="clueless">Change was clueless</label>
-            <input type="radio" name="clueless" value="1">
+            <label for="emailProfessionalism[q5][score]">Very consistent</label>
+            <input type="radio" name="emailProfessionalism[q5][score]" value="4">
+            <label for="emailProfessionalism[q5][score]">Can feel the difference</label>
+            <input type="radio" name="emailProfessionalism[q5][score]" value="3">
+            <label for="emailProfessionalism[q5][score]">I had to repeat myself</label>
+            <input type="radio" name="emailProfessionalism[q5][score]" value="2">
+            <label for="emailProfessionalism[q5][score]">Change was clueless</label>
+            <input type="radio" name="emailProfessionalism[q5][score]" value="1">
+            <label for="emailProfessionalism[q5][score]">N/A</label>
+            <input type="radio" name="emailProfessionalism[q5][score]" value="0">
+            <input type="hidden" name="emailProfessionalism[q5][maxScore]" value="4">
+            <input type="hidden" name="emailProfessionalism[q5][question]" value="If handled by multiple LSM - how consistent was your service experience?">
           </div>
         </div>
       </div>
+      <input type="submit" class="btn btn-success" value="Submit Category">
 
-      <div class="btn-group">
-        <a href="{{pathFor 'submitTest'}}">
-          <button type="submit" class="btn btn-primary">Next</button>
-        </a>
-        <a href="{{pathFor 'personalization'}}">
-          <button type="button" class="btn btn-default">Previous</button>
-        </a>
-      </div>
+      <a href="{{pathFor 'personalization'}}">
+        <button type="button" class="btn btn-default">Previous</button>
+      </a>
     </form>
   </div>
 </template>

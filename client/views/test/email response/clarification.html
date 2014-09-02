@@ -5,17 +5,21 @@
       <h2>Clarification</h2>
       <p>Please Provide Best Answer. Leave Blank If Not Applicable</p>
     </div>
-    <form action="#" class="q-form">
+    <form action="#" class="q-form" name="clarification">
       <div class="questions">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">Using correct template</h3>
           </div>
           <div class="panel-body">
-            <label for="yes">Yes</label>
-            <input type="radio" name="yes" value="2">
-            <label for="no">No</label>
-            <input type="radio" name="no" value="1">
+            <label for="clarification[q1][score]">Yes</label>
+            <input type="radio" name="clarification[q1][score]" value="2">
+            <label for="clarification[q1][score]">No</label>
+            <input type="radio" name="clarification[q1][score]" value="1">
+            <label for="clarification[q1][score]">N/A</label>
+            <input type="radio" name="clarification[q1][score]" value="0">
+            <input type="hidden" name="clarification[q1][maxScore]" value="2">
+            <input type="hidden" name="clarification[q1][question]" value="Using correct template">
           </div>
         </div>
       </div>
@@ -25,14 +29,18 @@
             <h3 class="panel-title">How accurate was your fulfillment</h3>
           </div>
           <div class="panel-body">
-            <label for="excellent">Excellent</label>
-            <input type="radio" name="excellent" value="4">
-            <label for="good">Good</label>
-            <input type="radio" name="good" value="3">
-            <label for="better">Can Do Better</label>
-            <input type="radio" name="better" value="2">
-            <label for="bad">Bad</label>
-            <input type="radio" name="bad" value="1">
+            <label for="clarification[q2][score]">Excellent</label>
+            <input type="radio" name="clarification[q2][score]" value="4">
+            <label for="clarification[q2][score]">Good</label>
+            <input type="radio" name="clarification[q2][score]" value="3">
+            <label for="clarification[q2][score]">Can Do Better</label>
+            <input type="radio" name="clarification[q2][score]" value="2">
+            <label for="clarification[q2][score]">Bad</label>
+            <input type="radio" name="clarification[q2][score]" value="1">
+            <label for="clarification[q2][score]">N/A</label>
+            <input type="radio" name="clarification[q2][score]" value="0">
+            <input type="hidden" name="clarification[q2][maxScore]" value="4">
+            <input type="hidden" name="clarification[q2][question]" value="How accurate was your fulfillment">
           </div>
         </div>
       </div>
@@ -42,31 +50,40 @@
             <h3 class="panel-title">Was the explanation clear</h3>
           </div>
           <div class="panel-body">
-            <label for="excellent">Excellent</label>
-            <input type="radio" name="excellent" value="4">
-            <label for="good">Good</label>
-            <input type="radio" name="good" value="3">
-            <label for="better">Can Do Better</label>
-            <input type="radio" name="better" value="2">
-            <label for="bad">Bad</label>
-            <input type="radio" name="bad" value="1">
+            <label for="clarification[q3][score]">Excellent</label>
+            <input type="radio" name="clarification[q3][score]" value="4">
+            <label for="clarification[q3][score]">Good</label>
+            <input type="radio" name="clarification[q3][score]" value="3">
+            <label for="clarification[q3][score]">Can Do Better</label>
+            <input type="radio" name="clarification[q3][score]" value="2">
+            <label for="clarification[q3][score]">Bad</label>
+            <input type="radio" name="clarification[q3][score]" value="1">
+            <label for="clarification[q3][score]">N/A</label>
+            <input type="radio" name="clarification[q3][score]" value="0">
+            <input type="hidden" name="clarification[q3][maxScore]" value="4">
+            <input type="hidden" name="clarification[q3][question]" value="Was the explanation clear">
           </div>
         </div>
       </div>
       <div class="questions">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Was alternative solution / supplier provided</h3>
+            <h3 class="panel-title">Was alternative solution/supplier provided</h3>
           </div>
           <div class="panel-body">
-            <label for="excellent">Excellent</label>
-            <input type="radio" name="excellent" value="4">
-            <label for="good">Good</label>
-            <input type="radio" name="good" value="3">
-            <label for="better">Can Do Better</label>
-            <input type="radio" name="better" value="2">
-            <label for="bad">Bad</label>
-            <input type="radio" name="bad" value="1">
+            <label for="clarification[q4][score]">Excellent</label>
+            <input type="radio" name="clarification[q4][score]" value="4">
+            <label for="clarification[q4][score]">Good</label>
+            <input type="radio" name="clarification[q4][score]" value="3">
+            <label for="clarification[q4][score]">Can Do Better</label>
+            <input type="radio" name="clarification[q4][score]" value="2">
+            <label for="clarification[q4][score]">Bad</label>
+            <input type="radio" name="clarification[q4][score]" value="1">
+            <label for="clarification[q4][score]">N/A</label>
+            <input type="radio" name="clarification[q4][score]" value="0">
+            <input type="hidden" name="clarification[q4][maxScore]" value="4">
+            <input type="hidden" name="clarification[q4][question]" value="Was alternative solution/supplier provided">
+
           </div>
         </div>
       </div>
@@ -76,10 +93,14 @@
             <h3 class="panel-title">Was the recommendation Q worthy</h3>
           </div>
           <div class="panel-body">
-            <label for="yes">Yes</label>
-            <input type="radio" name="yes" value="2">
-            <label for="no">No</label>
-            <input type="radio" name="no" value="1">
+            <label for="clarification[q5][score]">Yes</label>
+            <input type="radio" name="clarification[q5][score]" value="2">
+            <label for="clarification[q5][score]">No</label>
+            <input type="radio" name="clarification[q5][score]" value="1">
+            <label for="clarification[q5][score]">N/A</label>
+            <input type="radio" name="clarification[q5][score]" value="0">
+            <input type="hidden" name="clarification[q5][maxScore]" value="2">
+            <input type="hidden" name="clarification[q5][question]" value="Was the recommendation Q worthy">
           </div>
         </div>
       </div>
@@ -89,14 +110,18 @@
             <h3 class="panel-title">Provided appropriate options and knowledgable information</h3>
           </div>
           <div class="panel-body">
-            <label for="excellent">Excellent</label>
-            <input type="radio" name="excellent" value="4">
-            <label for="good">Good</label>
-            <input type="radio" name="good" value="3">
-            <label for="better">Can Do Better</label>
-            <input type="radio" name="better" value="2">
-            <label for="bad">Bad</label>
-            <input type="radio" name="bad" value="1">
+            <label for="clarification[q6][score]">Excellent</label>
+            <input type="radio" name="clarification[q6][score]" value="4">
+            <label for="clarification[q6][score]">Good</label>
+            <input type="radio" name="clarification[q6][score]" value="3">
+            <label for="clarification[q6][score]">Can Do Better</label>
+            <input type="radio" name="clarification[q6][score]" value="2">
+            <label for="clarification[q6][score]">Bad</label>
+            <input type="radio" name="clarification[q6][score]" value="1">
+            <label for="clarification[q6][score]">N/A</label>
+            <input type="radio" name="clarification[q6][score]" value="0">
+            <input type="hidden" name="clarification[q6][maxScore]" value="4">
+            <input type="hidden" name="clarification[q6][question]" value="Provided appropriate options and knowledgable information">
           </div>
         </div>
       </div>
@@ -106,14 +131,18 @@
             <h3 class="panel-title">Did you feel adequate research had been taken?(Detailed information was provided, not just a link and the location name was sent)</h3>
           </div>
           <div class="panel-body">
-            <label for="excellent">Excellent</label>
-            <input type="radio" name="excellent" value="4">
-            <label for="good">Good</label>
-            <input type="radio" name="good" value="3">
-            <label for="better">Can Do Better</label>
-            <input type="radio" name="better" value="2">
-            <label for="bad">Bad</label>
-            <input type="radio" name="bad" value="1">
+            <label for="clarification[q7][score]">Excellent</label>
+            <input type="radio" name="clarification[q7][score]" value="4">
+            <label for="clarification[q7][score]">Good</label>
+            <input type="radio" name="clarification[q7][score]" value="3">
+            <label for="clarification[q7][score]">Can Do Better</label>
+            <input type="radio" name="clarification[q7][score]" value="2">
+            <label for="clarification[q7][score]">Bad</label>
+            <input type="radio" name="clarification[q7][score]" value="1">
+            <label for="clarification[q7][score]">N/A</label>
+            <input type="radio" name="clarification[q7][score]" value="0">
+            <input type="hidden" name="clarification[q7][maxScore]" value="4">
+            <input type="hidden" name="clarification[q7][question]" value="Did you feel adequate research had been taken?(Detailed information was provided, not just a link and the location name was sent)">
           </div>
         </div>
       </div>
@@ -123,14 +152,18 @@
             <h3 class="panel-title">Recommendations were professional, clear, and concise</h3>
           </div>
           <div class="panel-body">
-            <label for="excellent">Excellent</label>
-            <input type="radio" name="excellent" value="4">
-            <label for="good">Good</label>
-            <input type="radio" name="good" value="3">
-            <label for="better">Can Do Better</label>
-            <input type="radio" name="better" value="2">
-            <label for="bad">Bad</label>
-            <input type="radio" name="bad" value="1">
+            <label for="clarification[q8][score]">Excellent</label>
+            <input type="radio" name="clarification[q8][score]" value="4">
+            <label for="clarification[q8][score]">Good</label>
+            <input type="radio" name="clarification[q8][score]" value="3">
+            <label for="clarification[q8][score]">Can Do Better</label>
+            <input type="radio" name="clarification[q8][score]" value="2">
+            <label for="clarification[q8][score]">Bad</label>
+            <input type="radio" name="clarification[q8][score]" value="1">
+            <label for="clarification[q8][score]">N/A</label>
+            <input type="radio" name="clarification[q8][score]" value="0">
+            <input type="hidden" name="clarification[q8][maxScore]" value="4">
+            <input type="hidden" name="clarification[q8][question]" value="Recommendations were professional, clear, and concise">
           </div>
         </div>
       </div>
@@ -140,14 +173,18 @@
             <h3 class="panel-title">Price / cost was broken down</h3>
           </div>
           <div class="panel-body">
-            <label for="excellent">Excellent</label>
-            <input type="radio" name="excellent" value="4">
-            <label for="good">Good</label>
-            <input type="radio" name="good" value="3">
-            <label for="better">Can Do Better</label>
-            <input type="radio" name="better" value="2">
-            <label for="bad">Bad</label>
-            <input type="radio" name="bad" value="1">
+            <label for="clarification[q9][score]">Excellent</label>
+            <input type="radio" name="clarification[q9][score]" value="4">
+            <label for="clarification[q9][score]">Good</label>
+            <input type="radio" name="clarification[q9][score]" value="3">
+            <label for="clarification[q9][score]">Can Do Better</label>
+            <input type="radio" name="clarification[q9][score]" value="2">
+            <label for="clarification[q9][score]">Bad</label>
+            <input type="radio" name="clarification[q9][score]" value="1">
+            <label for="clarification[q9][score]">N/A</label>
+            <input type="radio" name="clarification[q9][score]" value="0">
+            <input type="hidden" name="clarification[q9][maxScore]" value="4">
+            <input type="hidden" name="clarification[q9][question]" value="Price / cost was broken down">
           </div>
         </div>
       </div>
@@ -157,25 +194,25 @@
             <h3 class="panel-title">All the points were covered in the initial request</h3>
           </div>
           <div class="panel-body">
-            <label for="excellent">Excellent</label>
-            <input type="radio" name="excellent" value="4">
-            <label for="good">Good</label>
-            <input type="radio" name="good" value="3">
-            <label for="better">Can Do Better</label>
-            <input type="radio" name="better" value="2">
-            <label for="bad">Bad</label>
-            <input type="radio" name="bad" value="1">
+            <label for="clarification[q10][score]">Excellent</label>
+            <input type="radio" name="clarification[q10][score]" value="4">
+            <label for="clarification[q10][score]">Good</label>
+            <input type="radio" name="clarification[q10][score]" value="3">
+            <label for="clarification[q10][score]">Can Do Better</label>
+            <input type="radio" name="clarification[q10][score]" value="2">
+            <label for="clarification[q10][score]">Bad</label>
+            <input type="radio" name="clarification[q10][score]" value="1">
+            <label for="clarification[q10][score]">N/A</label>
+            <input type="radio" name="clarification[q10][score]" value="0">
+            <input type="hidden" name="clarification[q10][maxScore]" value="4">
+            <input type="hidden" name="clarification[q10][question]" value="All the points were covered in the initial request">
           </div>
         </div>
       </div>
-      <div class="btn-group">
-        <a href="{{pathFor 'qBenefits'}}">
-          <button type="button" class="btn btn-primary">Next</button>
-        </a>
-        <a href="{{pathFor 'timeManagement'}}">
-          <button type="button" class="btn btn-default">Previous</button>
-        </a>
-      </div>
+      <input type="submit" class="btn btn-primary" value="Next">
+      <a href="{{pathFor 'timeManagement'}}">
+        <button type="button" class="btn btn-default">Previous</button>
+      </a>
     </form>
   </div>
 </template>

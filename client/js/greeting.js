@@ -1,5 +1,8 @@
-// Template.greeting.helpers{
+Template.greeting.events({
+  'submit form': function(e,t){
+    e.preventDefault();
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 // };
 =======
@@ -47,3 +50,17 @@ Template.greeting.rendered = function(){
 
 };
 >>>>>>> Stashed changes
+=======
+    var greeting = $('form[name=greeting]').serializeObject();
+
+    Tests.insert(greeting, function(error){
+      if (error){
+        console.log ("hey");
+      }
+      else {
+        Router.go('callManagement');
+      }
+    });
+  }
+})
+>>>>>>> master
