@@ -26,6 +26,7 @@ Template.agentInfo.events({
       // Inserts new test into Test collection, returns ID of test
       // stores ID of test into testId
       var testId = Tests.insert(test);
+      console.log(testId);
       // Creates a URL: /hfr4y89f34fy/greeting
       var redirectUrl = '/' + testId + '/greeting';
       // Tells IronRouter to redirect user to /hfr4y89f34fy/greeting
