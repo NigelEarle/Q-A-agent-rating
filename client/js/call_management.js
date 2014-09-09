@@ -1,17 +1,9 @@
-// Template.callManagement.events({
-//   'submit form': function(e,t){
-//     e.preventDefault();
+Template.callManagement.events({
+  'submit form': function(e,t){
+    e.preventDefault();
+    processForm(this._id, "callManagement", "phoneInbound");
 
-//     var callManagement = $('form[name=callManagement]').serializeObject();
-
-//     Tests.insert(callManagement, function(error){
-//       if (error){
-//         console.log ("hey");
-//       }
-//       else {
-//         console.log('hell yea');
-//         Router.go('endCall');
-//       }
-//     });
-//   }
-// })
+    var redirectUrl = '/' + this._id + "/end_call";
+    Router.go(redirectUrl);
+  }
+});
