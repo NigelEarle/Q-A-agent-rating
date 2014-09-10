@@ -18,6 +18,22 @@ if (Agents.find().count() === 0) {
     email: 'janet.long@gmail.com'
   });
 
+}
 
+if (Territories.find().count() === 0) {
+  Territories.insert({
+    name: 'Hong Kong'
+  });
 
+  Territories.insert({
+    name: 'New York'
+  });
+
+  Territories.insert({
+    name: 'London'
+  });
+
+  Territories.insert({
+    name: 'Sao Paulo'
+  })
 }
