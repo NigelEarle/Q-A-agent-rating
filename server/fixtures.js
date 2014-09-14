@@ -22,18 +22,18 @@ if (Agents.find().count() === 0) {
 
 if (Territories.find().count() === 0) {
   Territories.insert({
-    name: 'Hong Kong'
+    name: 'Asia'
   });
 
   Territories.insert({
-    name: 'New York'
+    name: 'North America'
   });
 
   Territories.insert({
-    name: 'London'
+    name: 'Europe'
   });
 
   Territories.insert({
-    name: 'Sao Paulo'
+    name: 'Africa'
   })
 }

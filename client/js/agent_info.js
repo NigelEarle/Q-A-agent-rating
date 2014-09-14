@@ -16,13 +16,13 @@ Template.agentInfo.events({
     console.log(agent);
 
     var test = {};
-    test.agentId = "";
-    test.territoryId = "";
+
 
     if ( Agents.findOne({email: agent.email}) ){
 
       console.log("Agent exists");
-      var agent = Agents.findOne({email: agent.email});
+      var agent = Agents.findOne({email: agent.email, territoryId: agent.territoryId});
+      test.territoryId = agent.territoryId;
       test.agentId = agent._id;
       var testId = Tests.insert(test);
       console.log(testId);
