@@ -1,8 +1,8 @@
-findResultObject = function(testId, category, cat){
+findResultObject = function(testId, category){
 
-  projection = {};
+  var projection = {};
   projection.fields = {};
-  projection.fields[category] = 1;
+  projection.fields.categories = 1;
   projection.fields._id = 0;
   console.log(projection);
 
@@ -12,7 +12,7 @@ findResultObject = function(testId, category, cat){
   console.log(obj);
   arrayOfResults = [];
   for(var key in obj){
-    nest = obj[key][cat];
+    nest = obj[key][category];
     console.log('nest');
     console.log(nest);
     for(var key in nest){
