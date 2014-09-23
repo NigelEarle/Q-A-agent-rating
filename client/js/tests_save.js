@@ -38,17 +38,20 @@ var parseIntFormSubmission = function(formContent, subcategory){
 processForm = function(testId, formName, category) {
 
   var selector = 'form[name=\"'+formName+'\"]';
-  console.log("selector:");
-  console.log(selector);
-  var formSubmission = $(selector).serializeObject();
-  console.log("form from serializeObject");
-  console.log(formSubmission);
+  // console.log("selector:");
+  // console.log(selector);
+  formSubmission = $(selector).serializeObject();
+  // console.log("form from serializeObject");
+  // console.log(formSubmission);
 
   var subcategory = Object.keys(formSubmission)[0];
   // console.log('subcategory');
   // console.log(subcategory);
 
+
   var formSubmissionWithIntegers = parseIntFormSubmission(formSubmission, subcategory);
+
+
 
   // // formSubmissionWithIntegers object is straight from the form - all strings, no integers
   // var formSubmissionWithIntegers = formSubmission[subcategory];
@@ -69,6 +72,7 @@ processForm = function(testId, formName, category) {
   var sub_cat_hash = {};
   sub_cat_hash.test = formSubmissionWithIntegers;
   sub_cat_hash.sub_cat_result = subCatResult;
+
   // console.log("sub_cat_hash:");
   // console.log(sub_cat_hash);
   saveResult(testId, category, subcategory, sub_cat_hash);
@@ -76,8 +80,8 @@ processForm = function(testId, formName, category) {
 
 
 calcSubCatResult = function(result) {
-  console.log("This is the result param for calcSubCatResult:");
-  console.log(result);
+  // console.log("This is the result param for calcSubCatResult:");
+  // console.log(result);
   var totalScore = 0;
   var totalMaxScore = 0;
   for(var i = 0; i < result.length; i++){
