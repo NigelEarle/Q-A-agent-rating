@@ -5,8 +5,6 @@ findObject = function(testId){
   projection.fields._id = 0;
   console.log(projection);
 
-
-
   var obj = Tests.find(testId, projection).fetch()[0];
   console.log(obj);
   testArray = [];
