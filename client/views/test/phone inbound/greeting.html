@@ -1,7 +1,8 @@
 <template name="greeting">
   <div id="greeting-form" class="test-form">
     <div class="category">
-      <h1>Phone Inbound</h1>
+      <h1>Phone Inbound for agent with ID: {{agentId}}</h1>
+      <h1>Test ID: {{_id}}</h1>
       <h2>Greeting</h2>
       <p>Please Leave Blank If Not Applicable</p>
     </div>
@@ -12,14 +13,14 @@
             <h3 class="panel-title">Was call answered with in less than 20 seconds</h3>
           </div>
           <div class="panel-body">
-            <label for="greeting[q1][score]">Yes</label>
-            <input name="greeting[q1][score]" type="radio" value="2">
-            <label for="greeting[q1][score]">No</label>
-            <input name="greeting[q1][score]" type="radio" value="1">
-            <label for="greeting[q1][score]">N/A</label>
-            <input type="radio" name="greeting[q1][score]" value="0">
-            <input type="hidden" name="greeting[q1][maxScore]" value="2">
-            <input type="hidden" name="greeting[q1][question]" value="Was call answered with in less than 20 seconds">
+            <label for="greeting[0][score]">Yes</label>
+            <input name="greeting[0][score]" type="radio" class="score" value="2">
+            <label for="greeting[0][score]">No</label>
+            <input name="greeting[0][score]" type="radio" class="score" value="1">
+            <label for="greeting[0][score]">N/A</label>
+            <input type="radio" class="score" name="greeting[0][score]" value="0">
+            <input type="hidden" name="greeting[0][maxScore]" value="2">
+            <input type="hidden" name="greeting[0][question]" value="Was call answered with in less than 20 seconds">
           </div>
         </div>
       </div>
@@ -30,14 +31,14 @@
             <h3 class="panel-title">Proper Greeting Used</h3>
           </div>
           <div class="panel-body">
-            <label for="greeting[q2][score]">Yes</label>
-            <input name="greeting[q2][score]" type="radio" value="2">
-            <label for="greeting[q2][score]">No</label>
-            <input name="greeting[q2][score]" type="radio" value="1">
-            <label for="greeting[q2][score]">N/A</label>
-            <input name="greeting[q2][score]" type="radio" value="0">
-            <input type="hidden" name="greeting[q2][maxScore]" value="2">
-            <input type="hidden" name="greeting[q2][question]" value="Proper Greeting Used">
+            <label for="greeting[1][score]">Yes</label>
+            <input name="greeting[1][score]" type="radio" class="score" value="2">
+            <label for="greeting[1][score]">No</label>
+            <input name="greeting[1][score]" type="radio" class="score" value="1">
+            <label for="greeting[1][score]">N/A</label>
+            <input name="greeting[1][score]" type="radio" class="score" value="0">
+            <input type="hidden" name="greeting[1][maxScore]" value="2">
+            <input type="hidden" name="greeting[1][question]" value="Proper Greeting Used">
           </div>
         </div>
       </div>
@@ -48,14 +49,14 @@
             <h3 class="panel-title">Provided Name to member</h3>
           </div>
           <div class="panel-body">
-            <label for="greeting[q3][score]">Yes</label>
-            <input name="greeting[q3][score]" type="radio" value="2">
-            <label for="greeting[q3][score]">No</label>
-            <input name="greeting[q3][score]" type="radio" value="1">
-            <label for="greeting[q3][score]">N/A</label>
-            <input name="greeting[q3][score]" type="radio"  value="0">
-            <input type="hidden" name="greeting[q3][maxScore]" value="2">
-            <input type="hidden" name="greeting[q3][question]" value="Provided Name to member">
+            <label for="greeting[2][score]">Yes</label>
+            <input name="greeting[2][score]" type="radio" class="score" value="2">
+            <label for="greeting[2][score]">No</label>
+            <input name="greeting[2][score]" type="radio" class="score" value="1">
+            <label for="greeting[2][score]">N/A</label>
+            <input name="greeting[2][score]" type="radio" class="score"  value="0">
+            <input type="hidden" name="greeting[2][maxScore]" value="2">
+            <input type="hidden" name="greeting[2][question]" value="Provided Name to member">
           </div>
         </div>
        </div>
@@ -66,14 +67,14 @@
             <h3 class="panel-title">Verified The Member</h3>
           </div>
           <div class="panel-body">
-            <label for="greeting[q4][score]">Yes</label>
-            <input name="greeting[q4][score]" type="radio" value="2">
-            <label for="greeting[q4][score]">No</label>
-            <input name="greeting[q4][score]" type="radio" value="1">
-            <label for="greeting[q4][score]">N/A</label>
-            <input name="greeting[q4][score]" type="radio" value="0">
-            <input type="hidden" name="greeting[q4][maxScore]" value="2">
-            <input type="hidden" name="greeting[q4][question]" value="Verified The Member">
+            <label for="greeting[3][score]">Yes</label>
+            <input name="greeting[3][score]" type="radio" class="score" value="2">
+            <label for="greeting[3][score]">No</label>
+            <input name="greeting[3][score]" type="radio" class="score" value="1">
+            <label for="greeting[3][score]">N/A</label>
+            <input name="greeting[3][score]" type="radio" class="score" value="0">
+            <input type="hidden" name="greeting[3][maxScore]" value="2">
+            <input type="hidden" name="greeting[3][question]" value="Verified The Member">
           </div>
         </div>
       </div>
