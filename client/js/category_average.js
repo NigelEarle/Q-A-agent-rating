@@ -3,7 +3,7 @@ findResultObject = function(testId, category){
   projection.fields = {};
   projection.fields.categories = 1;
   projection.fields._id = 0;
-  console.log(projection);
+  // console.log(projection);
 
   var obj = Tests.find(testId, projection).fetch()[0];
   console.log('objjj');
@@ -11,12 +11,12 @@ findResultObject = function(testId, category){
   arrayOfResults = [];
   for(var key in obj){
     nest = obj[key][category];
-    console.log('nest');
-    console.log(nest);
+    // console.log('nest');
+    // console.log(nest);
     for(var key in nest){
       subResult = nest[key].sub_cat_result;
-      console.log('sub result');
-      console.log(subResult);
+      // console.log('sub result');
+      // console.log(subResult);
       arrayOfResults.push(subResult);
     }
   }
@@ -52,9 +52,3 @@ saveCatTotal = function(testId, category, subcategory, catTotals){
   setObj.$set[insertObj] = catTotals;
   Tests.update(testId, setObj);
 };
-
-
-
-
-
-

@@ -1,6 +1,8 @@
 findTestsResultsObjects = function(territoryId){
   var objects = Tests.find({territoryId: territoryId}).fetch();
-  console.log(objects);
+
+  // console.log(objects);
+
   testsTotalArray = [];
   for(var key in objects){
     nest = objects[key].test_result;
@@ -34,7 +36,8 @@ saveTerritoryTotal = function(territoryId, territoryResult){
   insertionTarget = "territory_result";
   var setHash = { $set: {} };
   setHash.$set[insertionTarget] = territoryResult;
-  console.log('sethash');
-  console.log(setHash);
+  // console.log('sethash');
+  // console.log(setHash);
+
   Territories.update(territoryId, setHash);
 }
