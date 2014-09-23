@@ -37,3 +37,16 @@ if (Territories.find().count() === 0) {
     name: 'Africa'
   })
 }
+
+if (Meteor.users.find().count() === 0) {
+  Accounts.createUser({
+    username: 'admin',
+    email: 'none@none.com',
+    password: '123456',
+    profile: {
+        first_name: 'Admin',
+        last_name: 'Account',
+        role: 'admin'
+    }
+  });
+}

@@ -1,5 +1,6 @@
 Template.greeting.events({
   'submit form': function(e,t){
+  	console.log("submitted");
     e.preventDefault();
     processForm(this._id, "greeting", "phoneInbound");
 

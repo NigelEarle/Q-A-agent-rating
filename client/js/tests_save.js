@@ -10,31 +10,39 @@ var saveResult = function (testId, category, subcategory, sub_cat_hash) {
   Tests.update(testId, setHash);
 }
 
-var parseIntFormSubmission = function(formSubmission, subcategory){
+var parseIntFormSubmission = function(formContent, subcategory){
   // result object is straight from the form - all strings, no integers
-  var result = formSubmission[subcategory];
+  var result = formContent[subcategory];
   console.log("result:");
   console.log(result);
   // takes strings in result and turns them into integers
+  var newResults = [];
   for(var i = 0; i < result.length ; i++){
-    result[i].score = parseInt(result[i].score);
-    result[i].maxScore = parseInt(result[i].maxScore);
-    console.log('score');
-    console.log(result[i].score);
-    console.log(result[i].maxScore);
+    newResults[i] = {};
+    if (result[i].score){
+      newResults[i].score = parseInt(result[i].score);
+      newResults[i].maxScore = parseInt(result[i].maxScore);
+      console.log('score');
+      console.log(newResults[i].score);
+      console.log(newResults[i].maxScore);
+    } else {
+      newResults[i].maxScore = parseInt(result[i].maxScore);
+      console.log('score');
+      console.log(newResults[i].score);
+    };
   };
 
-  return result;
+  return newResults;
 }
 
 processForm = function(testId, formName, category) {
 
   var selector = 'form[name=\"'+formName+'\"]';
-  // console.log("selector:");
-  // console.log(selector);
+  console.log("selector:");
+  console.log(selector);
   var formSubmission = $(selector).serializeObject();
-  // console.log("form from serializeObject");
-  // console.log(formSubmission);
+  console.log("form from serializeObject");
+  console.log(formSubmission);
 
   var subcategory = Object.keys(formSubmission)[0];
   // console.log('subcategory');
@@ -44,8 +52,8 @@ processForm = function(testId, formName, category) {
 
   // // formSubmissionWithIntegers object is straight from the form - all strings, no integers
   // var formSubmissionWithIntegers = formSubmission[subcategory];
-  // console.log("formSubmissionWithIntegers:");
-  // console.log(formSubmissionWithIntegers);
+  console.log("formSubmissionWithIntegers:");
+  console.log(formSubmissionWithIntegers);
   // // takes strings in formSubmissionWithIntegers and turns them into integers
   // for(var i = 0; i < formSubmissionWithIntegers.length ; i++){
   //   formSubmissionWithIntegers[i].score = parseInt(formSubmissionWithIntegers[i].score);
@@ -76,10 +84,11 @@ calcSubCatResult = function(result) {
     score = result[i].score;
     maxScore = result[i].maxScore;
 
-    if(!isNaN(score)) {
+    if (!!result[i].score){
       totalScore += score;
       totalMaxScore += maxScore;
-    }
+    };
+
   }
   var subCatResult = {};
   subCatResult.total_score = totalScore;
