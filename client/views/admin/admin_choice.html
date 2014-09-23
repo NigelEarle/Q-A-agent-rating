@@ -1,0 +1,18 @@
+<template name="adminChoice">
+
+  <div id="admin_choice" class="admin_choice">
+  <!-- change to new file in stylesheets^^ -->
+    <h1>Where Would You Like To Go?</h1>
+    <p>Please choose from one of the following</p>
+
+    <div id="choice-buttons">
+
+    <a href="{{pathFor 'territoryAverage'}}">
+      <button type="button" id="send-invite" class="btn btn-warning">Send Invite</button>
+    </a>
+
+      <button type="button" id="territories-average" class="btn btn-primary" value="Territories Average">Territories Average</button>
+
+    </div>
+  </div>
+</template>
