@@ -1,7 +1,6 @@
 Template.agentInfo.events({
   "submit #agent-info-form": function (e, t) {
     e.preventDefault();
-
     var turf = $("#agent-territory").val()
     var territoryId = Territories.find({name: turf}, {fields: {name: 0}}).fetch()[0];
 
