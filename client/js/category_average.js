@@ -55,9 +55,3 @@ saveCatTotal = function(testId, category, subcategory, catTotals){
   setObj.$set[insertObj] = catTotals;
   Tests.update(testId, setObj);
 };
-
-
-
-
-
-
