@@ -2,12 +2,10 @@ Tests = new Meteor.Collection ('tests');
 
 Meteor.methods({
 
+
 	insertTest: function(testAttributes){
-
 		testAttributes.dateCreated = new Date();
-
 		var testId = Tests.insert(testAttributes);
-
 		return testId;
 	},
 
@@ -17,6 +15,7 @@ Meteor.methods({
 		var dateSetHash = { $set: {} };
 		dateSetHash.$set.dateModified = dateModifed;
 		Tests.update(testId, dateSetHash);
-	}
+	},
+
 
 });
