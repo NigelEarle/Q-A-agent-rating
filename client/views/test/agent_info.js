@@ -16,17 +16,22 @@ Template.agentInfo.events({
 
     var test = {};
 
-
     if ( Agents.findOne({email: agent.email}) ){
 
       console.log("Agent exists");
       var agent = Agents.findOne({email: agent.email, territoryId: agent.territoryId});
       test.territoryId = agent.territoryId;
       test.agentId = agent._id;
-      var testId = Tests.insert(test);
-      console.log(testId);
-      var redirectUrl = '/' + testId + '/greeting';
-      Router.go(redirectUrl);
+
+      Meteor.call('insertTest', test, function(error, testId){
+        if (error){
+          console.log(error);
+        } else {
+          console.log(testId);
+          var redirectUrl = '/' + testId + '/greeting';
+          Router.go(redirectUrl);
+        }
+      });
 
     } else {
 
@@ -36,9 +41,16 @@ Template.agentInfo.events({
       var agentId = Agents.insert(agent);
       test.agentId = agentId;
 
-      var testId = Tests.insert(test);
-      var redirectUrl = '/' + testId + '/greeting';
-      Router.go(redirectUrl);
+      Meteor.call('insertTest', test, function(error, testId){
+        if (error){
+          console.log(error);
+        } else {
+          console.log(testId);
+          var redirectUrl = '/' + testId + '/greeting';
+          Router.go(redirectUrl);
+        }
+      });
+
     }
   }
 });

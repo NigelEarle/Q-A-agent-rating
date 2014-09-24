@@ -7,7 +7,7 @@ var saveResult = function (testId, category, subcategory, sub_cat_hash) {
   setHash.$set[insertionTarget] = sub_cat_hash;
   console.log("this is setHash:");
   console.log(setHash);
-  Tests.update(testId, setHash);
+  Meteor.call('updateTest', testId, setHash);
 }
 
 var parseIntFormSubmission = function(formContent, subcategory){
