@@ -26,19 +26,20 @@ returnTerritoryResults = function(testArray){
   territoryResult.territory_score_total = territoryScore;
   territoryResult.terrritory_max_total = territoryMax;
   territoryResult.territory_average_percent = territory_average_percent;
-  console.log('territory object')
-  console.log(territoryResult);
+  territoryResult.dateModified = new Date();
+  // console.log('territory object')
+  // console.log(territoryResult);
   return territoryResult;
 }
 
 saveTerritoryTotal = function(territoryId, territoryResult){
-  var territoryObject = {};
-  territoryObject.territory_result = territoryResult;
-  console.log('territory object: ')
+  var territoryObject = [];
+  territoryObject.push(territoryResult);
+  console.log('territory object: ');
   console.log(territoryObject);
-  insertionTarget = 'territory_result';
+  insertionTarget = 'territory_monthly_average';
   var setHash = { $set: {} };
-  setHash.$set[insertionTarget] = territoryResult;
+  setHash.$set[insertionTarget] = territoryObject ;
   console.log('set hash: ');
   console.log(setHash);
   Meteor.call('updateTerritoryResult', territoryId, setHash);
