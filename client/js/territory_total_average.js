@@ -44,12 +44,3 @@ saveTerritoryTotal = function(territoryId, territoryResult){
   console.log(setHash);
   Meteor.call('updateTerritoryResult', territoryId, setHash);
 }
-
-
-// var setHash = { $set: {} };
-//   setHash.$set[insertionTarget] = sub_cat_hash;
-//   console.log("this is setHash:");
-//   console.log(setHash);
-//   Meteor.call('updateTest', testId, setHash);
-
-

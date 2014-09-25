@@ -4,5 +4,6 @@ Meteor.methods({
 
   updateTerritoryResult: function(territoryId, setHash){
     Territories.update(territoryId, setHash);
+
   }
 });
