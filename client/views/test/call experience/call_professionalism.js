@@ -9,7 +9,7 @@ Template.callProfessionalism.events({
     var testTotal = returnTestTotals(findObject(this._id));
     saveTestTotal(this._id, testTotal);
 
-    var territoryTotal = returnTerritoryResults(findTestsResults(this.territoryId));
-    saveTerritoryTotal(this.territoryId, territoryTotal);
+    // var territoryTotal = returnTerritoryResults(findTestsResults(this.territoryId));
+    // saveTerritoryTotal(this.territoryId, territoryTotal);
   }
 });

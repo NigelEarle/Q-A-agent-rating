@@ -66,36 +66,110 @@ if (Meteor.users.find().count() === 0) {
 
 if (Tests.find().count() === 0){
 
-  Tests.insert({
+// 3 tests per territory.
 
+// asia tests
+  Tests.insert({
     agentId: agent4Id,
     categories: {
+        callExperience: {
+            call_professionalism: {
+                test: [
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 14,
+                    max_score: 22
+                }
+            },
+            cat_result: {
+                cat_score_total: 14,
+                cat_max_total: 22,
+                cat_percent: 63.63636363636363
+            }
+        },
         phoneInbound: {
             call_management: {
                 test: [
                     {
-                        score: 0,
+                        score: 2,
                         maxScore: 2
                     },
                     {
-                        score: 0,
+                        score: 1,
                         maxScore: 2
                     },
                     {
-                        score: 0,
+                        score: 3,
                         maxScore: 3
                     },
                     {
+                        score: 4,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 17,
+                    max_score: 23
+                }
+            },
+            cat_result: {
+                cat_score_total: 29,
+                cat_max_total: 39,
+                cat_percent: 74.35897435897436
+            },
+            end_call: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
                         score: 0,
-                        maxScore: 4
+                        maxScore: 2
                     },
                     {
                         score: 2,
-                        maxScore: 4
-                    },
-                    {
-                        score: 2,
-                        maxScore: 4
+                        maxScore: 2
                     },
                     {
                         score: 1,
@@ -108,40 +182,7 @@ if (Tests.find().count() === 0){
                 ],
                 sub_cat_result: {
                     total_score: 6,
-                    max_score: 12
-                }
-            },
-            cat_result: {
-                cat_score_total: 14,
-                cat_max_total: 26,
-                cat_percent: 53.84615384615385
-            },
-            end_call: {
-                test: [
-                    {
-                        score: 1,
-                        maxScore: 2
-                    },
-                    {
-                        score: 1,
-                        maxScore: 2
-                    },
-                    {
-                        score: 1,
-                        maxScore: 2
-                    },
-                    {
-                        score: 1,
-                        maxScore: 2
-                    },
-                    {
-                        score: 1,
-                        maxScore: 2
-                    }
-                ],
-                sub_cat_result: {
-                    total_score: 5,
-                    max_score: 10
+                    max_score: 8
                 }
             },
             greeting: {
@@ -155,30 +196,72 @@ if (Tests.find().count() === 0){
                         maxScore: 2
                     },
                     {
-                        score: 0,
+                        score: 2,
                         maxScore: 2
                     },
                     {
+                        score: 1,
                         maxScore: 2
                     }
                 ],
                 sub_cat_result: {
-                    total_score: 3,
-                    max_score: 4
+                    total_score: 6,
+                    max_score: 8
                 }
             }
         }
     },
-    dateCreated: "2014-09-24T07:33:32.005Z",
-    dateModified: "2014-09-24T07:34:08.773Z",
-    territoryId: asiaId
+    territoryId: asiaId,
+    test_result: {
+        test_score_total: 43,
+        test_max_total: 61,
+        test_percent: 70
+    }
 
   });
 
   Tests.insert({
-
-    agentId: agent2Id,
+    agentId: agent3Id,
     categories: {
+        callExperience: {
+            call_professionalism: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 3
+                    },
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 4
+                    },
+                    {
+                        score: 0,
+                        maxScore: 4
+                    },
+                    {
+                        score: 4,
+                        maxScore: 4
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 13,
+                    max_score: 18
+                }
+            },
+            cat_result: {
+                cat_score_total: 13,
+                cat_max_total: 18,
+                cat_percent: 72.22222222222221
+            }
+        },
         phoneInbound: {
             call_management: {
                 test: [
@@ -187,44 +270,52 @@ if (Tests.find().count() === 0){
                         maxScore: 2
                     },
                     {
-                        maxScore: 2
-                    },
-                    {
-                        maxScore: 3
-                    },
-                    {
-                        maxScore: 4
-                    },
-                    {
-                        maxScore: 4
-                    },
-                    {
-                        maxScore: 4
-                    },
-                    {
-                        maxScore: 2
-                    },
-                    {
-                        maxScore: 2
-                    }
-                ],
-                sub_cat_result: {
-                    total_score: 2,
-                    max_score: 2
-                }
-            },
-            cat_result: {
-                cat_score_total: 14,
-                cat_max_total: 16,
-                cat_percent: 87.5
-            },
-            end_call: {
-                test: [
-                    {
                         score: 2,
                         maxScore: 2
                     },
                     {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 19,
+                    max_score: 23
+                }
+            },
+            cat_result: {
+                cat_score_total: 32,
+                cat_max_total: 39,
+                cat_percent: 82.05128205128204
+            },
+            end_call: {
+                test: [
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
                         maxScore: 2
                     },
                     {
@@ -232,17 +323,17 @@ if (Tests.find().count() === 0){
                         maxScore: 2
                     },
                     {
-                        score: 1,
+                        score: 2,
                         maxScore: 2
                     },
                     {
-                        score: 1,
+                        score: 2,
                         maxScore: 2
                     }
                 ],
                 sub_cat_result: {
-                    total_score: 4,
-                    max_score: 6
+                    total_score: 7,
+                    max_score: 8
                 }
             },
             greeting: {
@@ -252,7 +343,134 @@ if (Tests.find().count() === 0){
                         maxScore: 2
                     },
                     {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
                         score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            }
+        }
+    },
+    territoryId: asiaId,
+    test_result: {
+        test_score_total: 45,
+        test_max_total: 57,
+        test_percent: 78
+    }
+
+  });
+
+  Tests.insert({
+    agentId: agent2Id,
+    categories: {
+        callExperience: {
+            call_professionalism: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 3
+                    },
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 4
+                    },
+                    {
+                        score: 0,
+                        maxScore: 4
+                    },
+                    {
+                        score: 4,
+                        maxScore: 4
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 13,
+                    max_score: 18
+                }
+            },
+            cat_result: {
+                cat_score_total: 13,
+                cat_max_total: 18,
+                cat_percent: 72.22222222222221
+            }
+        },
+        phoneInbound: {
+            call_management: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 19,
+                    max_score: 23
+                }
+            },
+            cat_result: {
+                cat_score_total: 32,
+                cat_max_total: 39,
+                cat_percent: 82.05128205128204
+            },
+            end_call: {
+                test: [
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 0,
                         maxScore: 2
                     },
                     {
@@ -265,16 +483,1396 @@ if (Tests.find().count() === 0){
                     }
                 ],
                 sub_cat_result: {
-                    total_score: 8,
+                    total_score: 7,
+                    max_score: 8
+                }
+            },
+            greeting: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
                     max_score: 8
                 }
             }
         }
     },
-    dateCreated: "2014-09-24T07:36:20.744Z",
-    dateModified: "2014-09-24T07:37:00.713Z",
-    territoryId: europeId
+    territoryId: asiaId,
+    test_result: {
+        test_score_total: 45,
+        test_max_total: 57,
+        test_percent: 78
+    }
 
   });
+
+// africa tests
+  Tests.insert({
+    agentId: agent1Id,
+    categories: {
+        callExperience: {
+            call_professionalism: {
+                test: [
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 14,
+                    max_score: 22
+                }
+            },
+            cat_result: {
+                cat_score_total: 14,
+                cat_max_total: 22,
+                cat_percent: 63.63636363636363
+            }
+        },
+        phoneInbound: {
+            call_management: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 4,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 17,
+                    max_score: 23
+                }
+            },
+            cat_result: {
+                cat_score_total: 29,
+                cat_max_total: 39,
+                cat_percent: 74.35897435897436
+            },
+            end_call: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 0,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            },
+            greeting: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            }
+        }
+    },
+    territoryId: africaId,
+    test_result: {
+        test_score_total: 43,
+        test_max_total: 61,
+        test_percent: 70
+    }
+  });
+
+  Tests.insert({
+    agentId: agent2Id,
+    categories: {
+        callExperience: {
+            call_professionalism: {
+                test: [
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 14,
+                    max_score: 22
+                }
+            },
+            cat_result: {
+                cat_score_total: 14,
+                cat_max_total: 22,
+                cat_percent: 63.63636363636363
+            }
+        },
+        phoneInbound: {
+            call_management: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 4,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 17,
+                    max_score: 23
+                }
+            },
+            cat_result: {
+                cat_score_total: 29,
+                cat_max_total: 39,
+                cat_percent: 74.35897435897436
+            },
+            end_call: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 0,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            },
+            greeting: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            }
+        }
+    },
+    territoryId: africaId,
+    test_result: {
+        test_score_total: 43,
+        test_max_total: 61,
+        test_percent: 70
+    }
+  });
+
+  Tests.insert({
+    agentId: agent4Id,
+    categories: {
+        callExperience: {
+            call_professionalism: {
+                test: [
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 14,
+                    max_score: 22
+                }
+            },
+            cat_result: {
+                cat_score_total: 14,
+                cat_max_total: 22,
+                cat_percent: 63.63636363636363
+            }
+        },
+        phoneInbound: {
+            call_management: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 4,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 17,
+                    max_score: 23
+                }
+            },
+            cat_result: {
+                cat_score_total: 29,
+                cat_max_total: 39,
+                cat_percent: 74.35897435897436
+            },
+            end_call: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 0,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            },
+            greeting: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            }
+        }
+    },
+    territoryId: africaId,
+    test_result: {
+        test_score_total: 43,
+        test_max_total: 61,
+        test_percent: 70
+    }
+  });
+
+// europe tests
+  Tests.insert({
+    agentId: agent2Id,
+    categories: {
+        callExperience: {
+            call_professionalism: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 3
+                    },
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 4
+                    },
+                    {
+                        score: 0,
+                        maxScore: 4
+                    },
+                    {
+                        score: 4,
+                        maxScore: 4
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 13,
+                    max_score: 18
+                }
+            },
+            cat_result: {
+                cat_score_total: 13,
+                cat_max_total: 18,
+                cat_percent: 72.22222222222221
+            }
+        },
+        phoneInbound: {
+            call_management: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 19,
+                    max_score: 23
+                }
+            },
+            cat_result: {
+                cat_score_total: 32,
+                cat_max_total: 39,
+                cat_percent: 82.05128205128204
+            },
+            end_call: {
+                test: [
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 0,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 7,
+                    max_score: 8
+                }
+            },
+            greeting: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            }
+        }
+    },
+    territoryId: europeId,
+    test_result: {
+        test_score_total: 45,
+        test_max_total: 57,
+        test_percent: 78
+    }
+  });
+
+  Tests.insert({
+    agentId: agent1Id,
+    categories: {
+        callExperience: {
+            call_professionalism: {
+                test: [
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 14,
+                    max_score: 22
+                }
+            },
+            cat_result: {
+                cat_score_total: 14,
+                cat_max_total: 22,
+                cat_percent: 63.63636363636363
+            }
+        },
+        phoneInbound: {
+            call_management: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 4,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 17,
+                    max_score: 23
+                }
+            },
+            cat_result: {
+                cat_score_total: 29,
+                cat_max_total: 39,
+                cat_percent: 74.35897435897436
+            },
+            end_call: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 0,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            },
+            greeting: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            }
+        }
+    },
+    territoryId: europeId,
+    test_result: {
+        test_score_total: 43,
+        test_max_total: 61,
+        test_percent: 70
+    }
+  });
+
+  Tests.insert({
+    agentId: agent3Id,
+    categories: {
+        callExperience: {
+            call_professionalism: {
+                test: [
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 14,
+                    max_score: 22
+                }
+            },
+            cat_result: {
+                cat_score_total: 14,
+                cat_max_total: 22,
+                cat_percent: 63.63636363636363
+            }
+        },
+        phoneInbound: {
+            call_management: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 4,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 17,
+                    max_score: 23
+                }
+            },
+            cat_result: {
+                cat_score_total: 29,
+                cat_max_total: 39,
+                cat_percent: 74.35897435897436
+            },
+            end_call: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 0,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            },
+            greeting: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            }
+        }
+    },
+    territoryId: europeId,
+    test_result: {
+        test_score_total: 43,
+        test_max_total: 61,
+        test_percent: 70
+    }
+  });
+
+// north america tests
+  Tests.insert({
+    agentId: agent3Id,
+    categories: {
+        callExperience: {
+            call_professionalism: {
+                test: [
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 14,
+                    max_score: 22
+                }
+            },
+            cat_result: {
+                cat_score_total: 14,
+                cat_max_total: 22,
+                cat_percent: 63.63636363636363
+            }
+        },
+        phoneInbound: {
+            call_management: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 4,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 17,
+                    max_score: 23
+                }
+            },
+            cat_result: {
+                cat_score_total: 29,
+                cat_max_total: 39,
+                cat_percent: 74.35897435897436
+            },
+            end_call: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 0,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            },
+            greeting: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            }
+        }
+    },
+    territoryId: northAmericaId,
+    test_result: {
+        test_score_total: 43,
+        test_max_total: 61,
+        test_percent: 70
+    }
+  });
+
+  Tests.insert({
+    agentId: agent4Id,
+    categories: {
+        callExperience: {
+            call_professionalism: {
+                test: [
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 14,
+                    max_score: 22
+                }
+            },
+            cat_result: {
+                cat_score_total: 14,
+                cat_max_total: 22,
+                cat_percent: 63.63636363636363
+            }
+        },
+        phoneInbound: {
+            call_management: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 4,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 17,
+                    max_score: 23
+                }
+            },
+            cat_result: {
+                cat_score_total: 29,
+                cat_max_total: 39,
+                cat_percent: 74.35897435897436
+            },
+            end_call: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 0,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            },
+            greeting: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            }
+        }
+    },
+    territoryId: northAmericaId,
+    test_result: {
+        test_score_total: 43,
+        test_max_total: 61,
+        test_percent: 70
+    }
+  });
+
+  Tests.insert({
+    agentId: agent1Id,
+    categories: {
+        callExperience: {
+            call_professionalism: {
+                test: [
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 3
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 4
+                    },
+                    {
+                        score: 3,
+                        maxScore: 4
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 14,
+                    max_score: 22
+                }
+            },
+            cat_result: {
+                cat_score_total: 14,
+                cat_max_total: 22,
+                cat_percent: 63.63636363636363
+            }
+        },
+        phoneInbound: {
+            call_management: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 3,
+                        maxScore: 3
+                    },
+                    {
+                        score: 4,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 2,
+                        maxScore: 4
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 17,
+                    max_score: 23
+                }
+            },
+            cat_result: {
+                cat_score_total: 29,
+                cat_max_total: 39,
+                cat_percent: 74.35897435897436
+            },
+            end_call: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 0,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            },
+            greeting: {
+                test: [
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    },
+                    {
+                        score: 2,
+                        maxScore: 2
+                    },
+                    {
+                        score: 1,
+                        maxScore: 2
+                    }
+                ],
+                sub_cat_result: {
+                    total_score: 6,
+                    max_score: 8
+                }
+            }
+        }
+    },
+    territoryId: northAmericaId,
+    test_result: {
+        test_score_total: 43,
+        test_max_total: 61,
+        test_percent: 70
+    }
+  })
 
 }
