@@ -12,6 +12,9 @@ Template.territoriesAverage.rendered = function(){
           text: '#'
       },
       xAxis: {
+          title: {
+            text: "Month"
+          },
           categories: [
               'Jan',
               'Feb',
@@ -53,8 +56,14 @@ Template.territoriesAverage.rendered = function(){
 
       }, {
           name: 'North America',
-          data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-
+          data: function(){
+            var name = Territories.find({name: 'North America'}).fetch();
+            value = [];
+            for(var key in name){
+              value[0] = name[key].territory_result.territory_average_percent;
+              return value;
+            }
+          }
       }, {
           name: 'Europe',
           data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
@@ -67,13 +76,35 @@ Template.territoriesAverage.rendered = function(){
     });
   });
 
-}
+  Tracker.autorun(function(){
+    allTestResults = Tests.find({ }, {fields: {dateCreated: 1, territoryId: 1, 'test_result.test_score_total': 1, 'test_result.test_max_total': 1}}).fetch();
+    console.log(allTestResults);
+
+    getTerritoryId = function (territoryName){
+      return Territories.find({name: territoryName}, {fields: {_id: 1}}).fetch()[0]._id;
+    };
 
 
+    getTerritoryTestResults = function(allTerritoryScores, territoryName, testMonthNum){
+      var territoryId = getTerritoryId(territoryName);
+      var territoryScoreTotal = 0;
+      var territoryMaxTotal = 0;
+      for (var i = 0; i < allTerritoryScores.length; i++){
+        if(allTerritoryScores[i].territoryId === territoryId && allTerritoryScores[i].dateCreated.getMonth() === testMonthNum){
 
+          territoryScoreTotal += allTerritoryScores[i].test_result.test_score_total;
+          territoryMaxTotal += allTerritoryScores[i].test_result.test_max_total;
+        }
+      }
+      console.log("territoryScoreTotal");
+      console.log(territoryScoreTotal);
+      console.log("territoryMaxTotal");
+      console.log(territoryMaxTotal);
+      return averageTerritoryScores = (territoryScoreTotal / territoryMaxTotal) * 100;
+    }
+  });
 
-
-    // getTerritoryTestResults = function(territoryName){
+   // getTerritoryTestResults = function(territoryName){
     //   var territoryId = getTerritoryId(territoryName)
     //   console.log("terr ID:");
     //   console.log(territoryId);
@@ -81,5 +112,11 @@ Template.territoriesAverage.rendered = function(){
     //   territoryIdCriteria.territoryId = territoryId;
     //   return Tests.find( territoryIdCriteria, {fields: {territoryId: 1, 'test_result.test_score_total': 1, 'test_result.test_max_total': 1}}).fetch();
     // };
+}
+
+
+
+
+
 
 
