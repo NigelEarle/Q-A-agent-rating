@@ -1,3 +1,4 @@
+
 findTestsResults = function(territoryId){
   var objects = Tests.find({territoryId: territoryId}).fetch();
   console.log(objects);
@@ -27,10 +28,11 @@ returnTerritoryResults = function(testArray){
   territoryResult.terrritory_max_total = territoryMax;
   territoryResult.territory_average_percent = territory_average_percent;
   territoryResult.dateModified = new Date();
-  // console.log('territory object')
-  // console.log(territoryResult);
+  console.log('territory object')
+  console.log(territoryResult);
   return territoryResult;
 }
+
 
 saveTerritoryTotal = function(territoryId, territoryResult){
   var territoryObject = [];

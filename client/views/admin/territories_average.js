@@ -12,6 +12,9 @@ Template.territoriesAverage.rendered = function(){
           text: '#'
       },
       xAxis: {
+          title: {
+            text: "Month"
+          },
           categories: [
               'Jan',
               'Feb',
