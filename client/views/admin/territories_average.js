@@ -1,4 +1,5 @@
 Template.territoriesAverage.rendered = function(){
+
   $(function () {
     $('#container').highcharts({
       chart: {
@@ -71,16 +72,11 @@ Template.territoriesAverage.rendered = function(){
       }]
     });
   });
+
 }
-Template.territoriesAverage.helpers({
-  data: function(){
-    var name = Territories.find({name: 'North America'}).fetch();
-    for(var key in name){
-      object = name[key].territory_result.territory_average_percent;
-      return object;
-    }
-  }
-})
+
+
+
 
 
 
