@@ -4,6 +4,7 @@ createChartObject = function(seriesNames, seriesData, startDate, endDate, interv
 
 };
 
+
 var createXAxisLabels = function(startDate, endDate, interval){
   var categories = [];
   if (interval === "Month"){
@@ -52,16 +53,3 @@ var createSeries = function(seriesNames, seriesData, startDate, endDate, interva
 
 
 createChartObject(['Asia', 'North America', 'Europe', 'Africa'], "territory_average_percent", "01/01/2014", "12/31/2014", "Month"); 
-
-
-
-var checkAnagram = function(arrayToCheck){
-  console.log("arrayToCheck");
-  console.log(arrayToCheck);
-  var arrayToCheckCopy = arrayToCheck;
-  arrayToCheck.reverse();
-  console.log("arrayToCheck");
-  console.log(arrayToCheck);
-  console.log("arrayToCheckCopy");
-  console.log(arrayToCheckCopy);
-}
