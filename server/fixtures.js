@@ -216,8 +216,8 @@ if (Tests.find().count() === 0){
         test_score_total: 43,
         test_max_total: 61,
         test_percent: 70
-    }
-
+    },
+    dateCreated: new Date()
   });
 
   Tests.insert({
@@ -367,12 +367,12 @@ if (Tests.find().count() === 0){
         test_score_total: 45,
         test_max_total: 57,
         test_percent: 78
-    }
-
+    },
+    dateCreated: new Date()
   });
 
   Tests.insert({
-    agentId: agent2Id,
+    agentId: agent1Id,
     categories: {
         callExperience: {
             call_professionalism: {
@@ -518,8 +518,8 @@ if (Tests.find().count() === 0){
         test_score_total: 45,
         test_max_total: 57,
         test_percent: 78
-    }
-
+    },
+    dateCreated: new Date()
   });
 
 // africa tests
@@ -670,7 +670,8 @@ if (Tests.find().count() === 0){
         test_score_total: 43,
         test_max_total: 61,
         test_percent: 70
-    }
+    },
+    dateCreated: new Date()
   });
 
   Tests.insert({
@@ -820,7 +821,8 @@ if (Tests.find().count() === 0){
         test_score_total: 43,
         test_max_total: 61,
         test_percent: 70
-    }
+    },
+    dateCreated: new Date()
   });
 
   Tests.insert({
@@ -970,7 +972,8 @@ if (Tests.find().count() === 0){
         test_score_total: 43,
         test_max_total: 61,
         test_percent: 70
-    }
+    },
+    dateCreated: new Date()
   });
 
 // europe tests
@@ -1121,7 +1124,8 @@ if (Tests.find().count() === 0){
         test_score_total: 45,
         test_max_total: 57,
         test_percent: 78
-    }
+    },
+    dateCreated: new Date()
   });
 
   Tests.insert({
@@ -1271,7 +1275,8 @@ if (Tests.find().count() === 0){
         test_score_total: 43,
         test_max_total: 61,
         test_percent: 70
-    }
+    },
+    dateCreated: new Date()
   });
 
   Tests.insert({
@@ -1421,7 +1426,8 @@ if (Tests.find().count() === 0){
         test_score_total: 43,
         test_max_total: 61,
         test_percent: 70
-    }
+    },
+    dateCreated: new Date()
   });
 
 // north america tests
@@ -1572,7 +1578,8 @@ if (Tests.find().count() === 0){
         test_score_total: 43,
         test_max_total: 61,
         test_percent: 70
-    }
+    },
+    dateCreated: new Date()
   });
 
   Tests.insert({
@@ -1722,7 +1729,8 @@ if (Tests.find().count() === 0){
         test_score_total: 43,
         test_max_total: 61,
         test_percent: 70
-    }
+    },
+    dateCreated: new Date()
   });
 
   Tests.insert({
@@ -1872,7 +1880,8 @@ if (Tests.find().count() === 0){
         test_score_total: 43,
         test_max_total: 61,
         test_percent: 70
-    }
-  })
+    },
+    dateCreated: new Date()
+  });
 
 }
