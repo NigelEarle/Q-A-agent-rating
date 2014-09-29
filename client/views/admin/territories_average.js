@@ -76,6 +76,34 @@ Template.territoriesAverage.rendered = function(){
     });
   });
 
+  Tracker.autorun(function(){
+    allTestResults = Tests.find({ }, {fields: {dateCreated: 1, territoryId: 1, 'test_result.test_score_total': 1, 'test_result.test_max_total': 1}}).fetch();
+    console.log(allTestResults);
+
+    getTerritoryId = function (territoryName){
+      return Territories.find({name: territoryName}, {fields: {_id: 1}}).fetch()[0]._id;
+    };
+
+
+    getTerritoryTestResults = function(allTerritoryScores, territoryName, testMonthNum){
+      var territoryId = getTerritoryId(territoryName);
+      var territoryScoreTotal = 0;
+      var territoryMaxTotal = 0;
+      for (var i = 0; i < allTerritoryScores.length; i++){
+        if(allTerritoryScores[i].territoryId === territoryId && allTerritoryScores[i].dateCreated.getMonth() === testMonthNum){
+
+          territoryScoreTotal += allTerritoryScores[i].test_result.test_score_total;
+          territoryMaxTotal += allTerritoryScores[i].test_result.test_max_total;
+        }
+      }
+      console.log("territoryScoreTotal");
+      console.log(territoryScoreTotal);
+      console.log("territoryMaxTotal");
+      console.log(territoryMaxTotal);
+      return averageTerritoryScores = (territoryScoreTotal / territoryMaxTotal) * 100;
+    }
+  });
+
 }
 
 
