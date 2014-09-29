@@ -1,5 +1,10 @@
 Template.territoriesAverage.rendered = function(){
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> c0b4d54c32815f6b743248303d9779a9d7d20e94
   $(function () {
     $('#container').highcharts({
       chart: {
@@ -75,6 +80,7 @@ Template.territoriesAverage.rendered = function(){
       }]
     });
   });
+<<<<<<< HEAD
 
   Tracker.autorun(function(){
     allTestResults = Tests.find({ }, {fields: {dateCreated: 1, territoryId: 1, 'test_result.test_score_total': 1, 'test_result.test_max_total': 1}}).fetch();
@@ -113,10 +119,5 @@ Template.territoriesAverage.rendered = function(){
     //   return Tests.find( territoryIdCriteria, {fields: {territoryId: 1, 'test_result.test_score_total': 1, 'test_result.test_max_total': 1}}).fetch();
     // };
 }
-
-
-
-
-
 
 
