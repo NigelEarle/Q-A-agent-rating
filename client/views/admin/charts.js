@@ -63,38 +63,31 @@ var getTerritoryTestResults = function(allTerritoryScores, territoryName, testMo
 // sample function call: createSeries(['Asia'], "", "01/01/2014", "01/01/2016", "Month");
 
 var createSeries = function(seriesNames, seriesData, startDate, endDate, interval){
-  var series = [];  
+  var series = [];
   var start = new Date(startDate);
   var end = new Date(endDate);
-  console.log("start:");
-  console.log(start);
-  console.log("end:");
-  console.log(end);
 
-  for (var i = 0; i < seriesNames.length; i++){
+  for(var i = 0; i < seriesNames.length; i++){
     var territoryId = getTerritoryId( seriesNames[i] );
-    console.log("territoryId:");
-    console.log(territoryId);
+
     // seriesResults are the test documents for the territoryId within the date range
     var seriesResults = Tests.find({territoryId: territoryId, dateCreated: {$gte: start, $lt: end} }).fetch();
-    console.log("seriesResults:");
-    console.log(seriesResults);
+
     series[i] = {
       name: seriesNames[i],
       // data needs to be an array of percentages based on the interval
       data: []
     };
-    console.log("series:");
-    console.log(series);
+    // console.log("series:");
+    // console.log(series);
   };
 
 };
 
+
 var start = new Date(2010, 3, 1);
 var end = new Date(2015, 4, 1);
-Tests.find({territoryId: "YL8sRmkTtwM9dFX5k", dateCreated: {$gte: start, $lt: end} }).fetch()
+// Tests.find({territoryId: "YL8sRmkTtwM9dFX5k", dateCreated: {$gte: start, $lt: end} }).fetch()
 
 
-
-
-createChartObject(['Asia', 'North America', 'Europe', 'Africa'], "territory_average_percent", "01/01/2014", "12/31/2014", "Month"); 
+createChartObject(['Asia', 'North America', 'Europe', 'Africa'], "territory_average_percent", "01/01/2014", "12/31/2014", "Month");
