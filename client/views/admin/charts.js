@@ -62,7 +62,7 @@ var getTerritoryTestResults = function(allTerritoryScores, territoryName, testMo
 // seriesNames is an array: ex. ['Asia', 'North America', 'Europe', 'Africa']
 // sample function call: createSeries(['Asia'], "", "01/01/2014", "01/01/2016", "Month");
 
-var createSeries = function(seriesNames, seriesData, startDate, endDate, interval){
+createSeries = function(seriesNames, seriesData, startDate, endDate, interval){
   var series = [];
   var start = new Date(startDate);
   var end = new Date(endDate);
@@ -72,14 +72,14 @@ var createSeries = function(seriesNames, seriesData, startDate, endDate, interva
 
     // seriesResults are the test documents for the territoryId within the date range
     var seriesResults = Tests.find({territoryId: territoryId, dateCreated: {$gte: start, $lt: end} }).fetch();
-
+    console.log(seriesResults);
     series[i] = {
       name: seriesNames[i],
       // data needs to be an array of percentages based on the interval
       data: []
     };
-    // console.log("series:");
-    // console.log(series);
+    console.log("series:");
+    console.log(series);
   };
 
 };
