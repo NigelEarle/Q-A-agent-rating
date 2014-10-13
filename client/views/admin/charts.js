@@ -2,6 +2,17 @@
 
 createChartObject = function(seriesNames, seriesData, startDate, endDate, interval){
 
+// seriesNames: ["Asia", "North America", "Africa"]
+// seriesData: "territory_average_percent"
+// startDate: "2012-01-01"
+// endDate: "2014-12-31"
+// interval: "Monthly"
+
+
+
+
+
+
 };
 
 
