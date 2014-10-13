@@ -23,31 +23,26 @@ Template.territoriesAverage.rendered = function(){
 
   var createXAxisLabels = function(startDate, endDate, interval){
     var categories = [];
-    if (interval === "Month"){
-      var monthNames = [ "January", "February", "March", 
-                        "April", "May", "June",
-                        "July", "August", "September", 
-                        "October", "November", "December" ];
-      var startingMonth = getMonth(startDate);
-      var startingYear = getYear(startDate);
-      var endingMonth = getMonth(endDate);
-      var endingYear = getYear(endDate);
+    var startingMonth = getMonth(startDate);
+    var startingYear = getYear(startDate);
+    var endingMonth = getMonth(endDate);
+    var endingYear = getYear(endDate);
+    var monthNames = [ "January", "February", "March", 
+                      "April", "May", "June",
+                      "July", "August", "September", 
+                      "October", "November", "December" ];
 
+    if (interval === "Month"){
       for( var month = startingMonth, year = startingYear; month <= endingMonth || year < endingYear; month++){
-        console.log("month is: " + month);
-        console.log("year is: " + year);
+        // console.log("month is: " + month);
+        // console.log("year is: " + year);
         if(month === 12){
-          categories.push(monthNames[month] + " - " + year);
           month = -1;
-          year++
+          year++;
         } else {
           categories.push(monthNames[month] + " - " + year);
         };
       };
-
-      // for( startingMonth; startingMonth <= endingMonth; startingMonth++){
-      //   categories.push(monthNames[startingMonth]);
-      // };
       var xAxis = {
         title: {
           text: interval
@@ -55,11 +50,83 @@ Template.territoriesAverage.rendered = function(){
         categories: categories
       };
     };
+
+    if (interval === "Year"){
+      for( var year = startingYear; year <= endingYear; year++){
+        // console.log("year is: " + year);
+        categories.push(year);
+      };
+      var xAxis = {
+        title: {
+          text: interval
+        },
+        categories: categories
+      };
+    };
+
+
     console.log(xAxis);
     return xAxis;
   };
 
-  createXAxisLabels(formSubmission.startDate, formSubmission.endDate, )
+  createXAxisLabels(formSubmission.startDate, formSubmission.endDate, formSubmission.interval);
+
+  var calculateAverage = function(arrayOfNumbers){
+    var sum = 0;
+    for(var i = 0; i < arrayOfNumbers.length; i++){
+      sum += arrayOfNumbers[i];
+    }
+    console.log("The sum is " + sum);
+    console.log("The array length is " + arrayOfNumbers.length);
+    if( arrayOfNumbers.length === 0){
+      return 0;
+    } else {
+      return average = sum / arrayOfNumbers.length;
+    };
+  };
+
+  var calculateArrayAverages = function(array){
+    var testAverages = [];
+    for (var i = 0; i < array.length; i++){
+      testAverages.push(calculateAverage(array[i]));
+    };
+    return testAverages;
+  };
+
+  var calculateTestAverages = function(testResults, startDate, endDate, interval){
+
+    var testAverages;
+    var arrayOfNumbers = [];
+    var arrayOfAverages = [];
+    var monthAverage = 0;
+    var intermediaryArray = [];
+
+    if( interval == "Month" ){
+      startingMonth = getMonth(startDate); // 3
+      endingMonth = getMonth(endDate); // 6
+      maxArrayIndex = endingMonth - startingMonth; //3
+
+      for (var i = 0; i <= maxArrayIndex; i++){
+        intermediaryArray[i] = [];  //Initialize the empty array here based on the size
+      };
+
+      for (var month = startingMonth,i=0; month <= endingMonth; month++,i++){
+      //Simply update the value of i when you update the value of month. 
+      //You don't have to enclose the whole thing into the loop that initialises intermediaryArray
+
+        for (var testNumber = 0; testNumber < testResults.length; testNumber++){
+          if ( getMonth(testResults[testNumber].dateCreated) == month ){
+            intermediaryArray[i].push(testResults[testNumber].score);
+          };
+        };
+      };
+    };
+
+    console.log(intermediaryArray);
+    return calculateArrayAverages(intermediaryArray);
+
+  };
+
 
   $(function () {
     $('#container').highcharts({
