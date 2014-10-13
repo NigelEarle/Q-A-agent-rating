@@ -1,27 +1,65 @@
-Template.callProfessionalism.events({
-  'submit form': function(e,t){
-    e.preventDefault();
-    processForm(this._id, "callProfessionalism", "callExperience");
-
-    var catTotals = returnCatTotals(findResultObject(this._id, "callExperience"));
-    saveCatTotal(this._id, "callExperience", "cat_result", catTotals );
-
-    var testTotal = returnTestTotals(findObject(this._id));
-    saveTestTotal(this._id, testTotal);
-
-    // var territoryTotal = returnTerritoryResults(findTestsResults(this.territoryId));
-    // saveTerritoryTotal(this.territoryId, territoryTotal);
-  }
-});
-
+var formSubmission;
 
 Template.territoriesAverage.rendered = function(){
 
   $('form').submit(function(e){
     e.preventDefault();
-    var formSubmission = $('form[name="graphOptionsForm"]').serializeObject();
+    formSubmission = $('form[name="graphOptionsForm"]').serializeObject();
     console.log(formSubmission);
   });
+
+  var convertToDateObject = function(date){
+    dateObject = new Date(date);
+    return dateObject;
+  };
+
+  var getMonth = function(date){
+    return convertToDateObject(date).getMonth();
+  };
+
+  var getYear = function(date){
+    return convertToDateObject(date).getFullYear();
+  };
+
+  var createXAxisLabels = function(startDate, endDate, interval){
+    var categories = [];
+    if (interval === "Month"){
+      var monthNames = [ "January", "February", "March", 
+                        "April", "May", "June",
+                        "July", "August", "September", 
+                        "October", "November", "December" ];
+      var startingMonth = getMonth(startDate);
+      var startingYear = getYear(startDate);
+      var endingMonth = getMonth(endDate);
+      var endingYear = getYear(endDate);
+
+      for( var month = startingMonth, year = startingYear; month <= endingMonth || year < endingYear; month++){
+        console.log("month is: " + month);
+        console.log("year is: " + year);
+        if(month === 12){
+          categories.push(monthNames[month] + " - " + year);
+          month = -1;
+          year++
+        } else {
+          categories.push(monthNames[month] + " - " + year);
+        };
+      };
+
+      // for( startingMonth; startingMonth <= endingMonth; startingMonth++){
+      //   categories.push(monthNames[startingMonth]);
+      // };
+      var xAxis = {
+        title: {
+          text: interval
+        },
+        categories: categories
+      };
+    };
+    console.log(xAxis);
+    return xAxis;
+  };
+
+  createXAxisLabels(formSubmission.startDate, formSubmission.endDate, )
 
   $(function () {
     $('#container').highcharts({
