@@ -6,251 +6,61 @@ Template.territoriesAverage.rendered = function(){
     e.preventDefault();
     formSubmission = $('form[name="graphOptionsForm"]').serializeObject();
     console.log(formSubmission);
+    var chartObject = createChartObject(
+      formSubmission.territories,
+      "territory_average_percent",
+      formSubmission.startDate,
+      formSubmission.endDate,
+      formSubmission.interval
+    );
+
+    console.log(chartObject);
+
+    $('#container').highcharts(chartObject);
+
   });
 
-  convertToDateObject = function(date){
-    dateObject = new Date(date);
-    return dateObject;
-  };
-
-  getMonth = function(date){
-    return convertToDateObject(date).getMonth();
-  };
-
-  getYear = function(date){
-    return convertToDateObject(date).getFullYear();
-  };
-
-  var createXAxisLabels = function(startDate, endDate, interval){
-    var categories = [];
-    var startingMonth = getMonth(startDate);
-    var startingYear = getYear(startDate);
-    var endingMonth = getMonth(endDate);
-    var endingYear = getYear(endDate);
-    var monthNames = [ "January", "February", "March", 
-                      "April", "May", "June",
-                      "July", "August", "September", 
-                      "October", "November", "December" ];
-
-    if (interval === "Month"){
-      for( var month = startingMonth, year = startingYear; month <= endingMonth || year < endingYear; month++){
-        // console.log("month is: " + month);
-        // console.log("year is: " + year);
-        if(month === 12){
-          month = -1;
-          year++;
-        } else {
-          categories.push(monthNames[month] + " - " + year);
-        };
-      };
-      var xAxis = {
-        title: {
-          text: interval
-        },
-        categories: categories
-      };
-    };
-
-    if (interval === "Year"){
-      for( var year = startingYear; year <= endingYear; year++){
-        // console.log("year is: " + year);
-        categories.push(year);
-      };
-      var xAxis = {
-        title: {
-          text: interval
-        },
-        categories: categories
-      };
-    };
-
-    console.log(xAxis);
-    return xAxis;
-  };
-
-  // createXAxisLabels(formSubmission.startDate, formSubmission.endDate, formSubmission.interval);
-
-  var createYAxisLabels = function(seriesData){
-    var yAxis = {
-      min: 0,
-      title: {
-        text: ''
-      }
-    };
-    if (seriesData === "territory_average_percent"){
-      yAxis.title.text = "Percentage";
-    };
-    return yAxis;
-  };
-
-  var calculateAverage = function(arrayOfNumbers){
-    var sum = 0;
-    for(var i = 0; i < arrayOfNumbers.length; i++){
-      sum += arrayOfNumbers[i];
-    }
-    console.log("The sum is " + sum);
-    console.log("The array length is " + arrayOfNumbers.length);
-    if( arrayOfNumbers.length === 0){
-      return 0;
-    } else {
-      return average = sum / arrayOfNumbers.length;
-    };
-  };
-
-  var calculateArrayAverages = function(array){
-    var testAverages = [];
-    for (var i = 0; i < array.length; i++){
-      testAverages.push(calculateAverage(array[i]));
-    };
-    return testAverages;
-  };
-
-  var calculateMonthsBetweenDates = function(startDate, endDate){
-    
-    var startingMonth = getMonth(startDate);
-    var startingYear = getYear(startDate);
-    var endingMonth = getMonth(endDate);
-    var endingYear = getYear(endDate);
-    var monthsBetweenYears;
-
-    if(startingMonth === 0){ //Have to take into account
-      startingMonth++;
-      endingMonth++;
-    };
-
-    monthsBetweenDates = (endingYear-startingYear) * 12 + (endingMonth-(startingMonth-1));
-
-    return monthsBetweenDates;
-    
-  };
-
-  testResults = [
-    {
-      dateCreated: "2014-07-12",
-      score: 99.3,
-    },
-    {
-      dateCreated: "2014-05-11",
-      score: 27.1
-    },
-    {
-      dateCreated: "2014-07-22",
-      score: 88.8
-    },
-    {
-      dateCreated: "2014-07-01",
-      score: 33.3
-    },
-    {
-      dateCreated: "2015-01-08",
-      score: 88.8
-    },
-    {
-      dateCreated: "2015-01-22",
-      score: 88.8
-    },
-    {
-      dateCreated: "2015-02-08",
-      score: 100.0
-    },
-    {
-      dateCreated: "2015-02-12",
-      score: 50.0
-    }
-  ];
-
-  startDate = "2014-04-01";
-  endDate = "2015-03-31";
-  calculateTestAverages = function(testResults, startDate, endDate, interval){
 
 
 
-    var testAverages;
-    var arrayOfNumbers = [];
-    var arrayOfAverages = [];
-    var monthAverage = 0;
-    intermediaryArray = [];
-    var startingMonth = getMonth(startDate);
-    var startingYear = getYear(startDate);
-    var endingMonth = getMonth(endDate);
-    var endingYear = getYear(endDate);
-    var monthToCheck;
-    var yearToCheck;
-    var testMonth;
-    var testYear;
 
-    maxArrayIndex = calculateMonthsBetweenDates(startDate, endDate) - 1;
+  // testResults = [
+  //   {
+  //     dateCreated: "2014-07-12",
+  //     score: 99.3,
+  //   },
+  //   {
+  //     dateCreated: "2014-05-11",
+  //     score: 27.1
+  //   },
+  //   {
+  //     dateCreated: "2014-07-22",
+  //     score: 88.8
+  //   },
+  //   {
+  //     dateCreated: "2014-07-01",
+  //     score: 33.3
+  //   },
+  //   {
+  //     dateCreated: "2015-01-08",
+  //     score: 88.8
+  //   },
+  //   {
+  //     dateCreated: "2015-01-22",
+  //     score: 88.8
+  //   },
+  //   {
+  //     dateCreated: "2015-02-08",
+  //     score: 100.0
+  //   },
+  //   {
+  //     dateCreated: "2015-02-12",
+  //     score: 50.0
+  //   }
+  // ];
 
-    for (var i = 0; i <= maxArrayIndex; i++){
-      intermediaryArray[i] = [];  //Initialize the empty array here based on the size
-    };
-
-    checklistArray = [];
-    if (interval === "Month"){
-      for( var month = startingMonth, year = startingYear; month <= endingMonth || year < endingYear; month++){
-        // console.log("month is: " + month);
-        // console.log("year is: " + year);
-        if(month === 12){
-          month = -1;
-          year++;
-        } else {
-          checklistArray.push( [month, year] );
-        };
-      };
-    };
-
-    console.log(startDate);
-    console.log(endDate);
-    console.log(testResults);
-
-    for (var checklistPosition = 0, i = 0; checklistPosition < checklistArray.length; checklistPosition++, i++){
-      monthToCheck = checklistArray[checklistPosition][0]; // 6
-      yearToCheck = checklistArray[checklistPosition][1]; // 2014
-      for (var testNumber = 0; testNumber < testResults.length; testNumber++){
-        testMonth = getMonth(testResults[testNumber].dateCreated);
-        testYear = getYear(testResults[testNumber].dateCreated);
-        if (testMonth === monthToCheck && testYear === yearToCheck){
-          intermediaryArray[i].push(testResults[testNumber].score)
-        };
-      };
-    };
-
-    // console.log("starting Month is " + startingMonth);
-    // console.log("starting Year is " + startingYear);
-
-    // if( interval == "Month" ){
-
-    //   maxArrayIndex = calculateMonthsBetweenDates(startDate, endDate) - 1;
-
-    //   for (var i = 0; i <= maxArrayIndex; i++){
-    //     intermediaryArray[i] = [];  //Initialize the empty array here based on the size
-    //   };
-
-    //   for (var month = startingMonth, year = startingYear, i = 0; month <= endingMonth || year < endingYear; month++, year++, i++){
-    //   //Simply update the value of i when you update the value of month. 
-    //   //You don't have to enclose the whole thing into the loop that initialises intermediaryArray
-    //     for (var testNumber = 0; testNumber < testResults.length; testNumber++){
-    //       if ( getMonth(testResults[testNumber].dateCreated) == month && getYear(testResults[testNumber].dateCreated) == year){
-    //         intermediaryArray[i].push(testResults[testNumber].score);
-    //       };
-    //       console.log("testNumber is " + testNumber);
-    //       console.log("test month is " + getMonth(testResults[testNumber].dateCreated));
-    //       console.log("test year is " + getYear(testResults[testNumber].dateCreated));
-    //     };
-
-    //     console.log("month is " + month);
-    //     console.log("year is " + year);
-    //     console.log("i is "+ i);
-
-
-    //   };
-    // };
-
-    console.log(intermediaryArray);
-
-    return calculateArrayAverages(intermediaryArray);
-
-  };
+  // startDate = "2014-04-01";
+  // endDate = "2015-03-31";
 
 
   // $(function () {
@@ -366,6 +176,6 @@ Template.territoriesAverage.rendered = function(){
     //   territoryIdCriteria.territoryId = territoryId;
     //   return Tests.find( territoryIdCriteria, {fields: {territoryId: 1, 'test_result.test_score_total': 1, 'test_result.test_max_total': 1}}).fetch();
     // };
-}
+};
 
 
