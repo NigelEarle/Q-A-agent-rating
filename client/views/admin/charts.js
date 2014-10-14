@@ -76,8 +76,8 @@ var calculateAverage = function(arrayOfNumbers){
   for(var i = 0; i < arrayOfNumbers.length; i++){
     sum += arrayOfNumbers[i];
   }
-  console.log("The sum is " + sum);
-  console.log("The array length is " + arrayOfNumbers.length);
+  // console.log("The sum is " + sum);
+  // console.log("The array length is " + arrayOfNumbers.length);
   if( arrayOfNumbers.length === 0){
     return 0;
   } else {
@@ -126,6 +126,7 @@ var getTerritoryTestResultsBetweenDates = function(category, territoryName, star
   if (category === "All"){
     category = {"test_result.test_score_total": 1, "test_result.test_max_total": 1, dateCreated: 1};
     var queryResults = Tests.find({territoryId: territoryId, dateCreated: {$gte: startDate, $lt: endDate}}, {fields: category}).fetch();
+    console.log("query results");
     console.log(queryResults);
     for (var i = 0; i < queryResults.length; i++){
       testResult.dateCreated = queryResults[i].dateCreated;
@@ -133,7 +134,8 @@ var getTerritoryTestResultsBetweenDates = function(category, territoryName, star
       testResults.push(testResult);
     };  
   };
-
+  console.log("test results");
+  console.log(testResults);
   return testResults;
 };
 
