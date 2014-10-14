@@ -1,3 +1,4 @@
+// createChartObject = function(seriesNames, seriesData, startDate, endDate, interval){
 
 
 createChartObject = function(seriesNames, seriesData, startDate, endDate, interval){
@@ -48,41 +49,48 @@ var createYAxisLabels = function(seriesData){
   return yAxis;
 };
 
+// allTestResults = Tests.find({ }, {fields: {dateCreated: 1, territoryId: 1, 'test_result.test_score_total': 1, 'test_result.test_max_total': 1}}).fetch();
+// console.log(allTestResults);
+
 var getTerritoryId = function(territoryName){
   return Territories.find({name: territoryName}, {fields: {_id: 1}}).fetch()[0]._id;
-};
-
-var getTerritoryTestResults = function(allTerritoryScores, territoryName, testMonthNum){
-  var territoryId = getTerritoryId(territoryName);
-  var territoryScoreTotal = 0;
-  var territoryMaxTotal = 0;
-  for (var i = 0; i < allTerritoryScores.length; i++){
-    if(allTerritoryScores[i].territoryId === territoryId && allTerritoryScores[i].dateCreated.getMonth() === testMonthNum){
-
-      territoryScoreTotal += allTerritoryScores[i].test_result.test_score_total;
-      territoryMaxTotal += allTerritoryScores[i].test_result.test_max_total;
-    }
-  }
-  console.log("territoryScoreTotal");
-  console.log(territoryScoreTotal);
-  console.log("territoryMaxTotal");
-  console.log(territoryMaxTotal);
-  return averageTerritoryScores = (territoryScoreTotal / territoryMaxTotal) * 100;
 }
+
+// var getTerritoryTestResults = function(allTerritoryScores, territoryName, testMonthNum){
+//   var territoryId = getTerritoryId(territoryName);
+//   var territoryScoreTotal = 0;
+//   var territoryMaxTotal = 0;
+//   for (var i = 0; i < allTerritoryScores.length; i++){
+//     if(allTerritoryScores[i].territoryId === territoryId && allTerritoryScores[i].dateCreated.getMonth() === testMonthNum){
+
+//       territoryScoreTotal += allTerritoryScores[i].test_result.test_score_total;
+//       territoryMaxTotal += allTerritoryScores[i].test_result.test_max_total;
+//     }
+//   }
+//   console.log("territoryScoreTotal");
+//   console.log(territoryScoreTotal);
+//   console.log("territoryMaxTotal");
+//   console.log(territoryMaxTotal);
+//   return averageTerritoryScores = (territoryScoreTotal / territoryMaxTotal) * 100;
+// }
+
+// getTerritoryTestResults(allTestResults, 'Asia', 8);
 
 // seriesNames is an array: ex. ['Asia', 'North America', 'Europe', 'Africa']
 // sample function call: createSeries(['Asia'], "", "01/01/2014", "01/01/2016", "Month");
 
+
 createSeries = function(seriesNames, seriesData, startDate, endDate, interval){
+
   var series = [];
   var start = new Date(startDate);
   var end = new Date(endDate);
 
   for(var i = 0; i < seriesNames.length; i++){
-    var territoryId = getTerritoryId( seriesNames[i] );
-
+    var territoryId = getTerritoryId(seriesNames[i]);
     // seriesResults are the test documents for the territoryId within the date range
     var seriesResults = Tests.find({territoryId: territoryId, dateCreated: {$gte: start, $lt: end} }).fetch();
+
     console.log(seriesResults);
     series[i] = {
       name: seriesNames[i],
@@ -92,13 +100,12 @@ createSeries = function(seriesNames, seriesData, startDate, endDate, interval){
     console.log("series:");
     console.log(series);
   };
+}
 
-};
 
-
-var start = new Date(2010, 3, 1);
-var end = new Date(2015, 4, 1);
+// var start = new Date(2010, 3, 1);
+// var end = new Date(2015, 4, 1);
 // Tests.find({territoryId: "YL8sRmkTtwM9dFX5k", dateCreated: {$gte: start, $lt: end} }).fetch()
 
 
-createChartObject(['Asia', 'North America', 'Europe', 'Africa'], "territory_average_percent", "01/01/2014", "12/31/2014", "Month");
+// createChartObject(['Asia', 'North America', 'Europe', 'Africa'], "territory_average_percent", "01/01/2014", "12/31/2014", "Month");
