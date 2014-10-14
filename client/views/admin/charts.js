@@ -6,7 +6,7 @@ createChartObject = function(seriesNames, seriesData, startDate, endDate, interv
 // seriesData: "territory_average_percent"
 // startDate: "2012-01-01"
 // endDate: "2014-12-31"
-// interval: "Monthly"
+// interval: "Month"
 
 
 
