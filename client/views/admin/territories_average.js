@@ -1,4 +1,132 @@
+var formSubmission;
+
 Template.territoriesAverage.rendered = function(){
+
+  $('form').submit(function(e){
+    e.preventDefault();
+    formSubmission = $('form[name="graphOptionsForm"]').serializeObject();
+    console.log(formSubmission);
+  });
+
+  var convertToDateObject = function(date){
+    dateObject = new Date(date);
+    return dateObject;
+  };
+
+  var getMonth = function(date){
+    return convertToDateObject(date).getMonth();
+  };
+
+  var getYear = function(date){
+    return convertToDateObject(date).getFullYear();
+  };
+
+  var createXAxisLabels = function(startDate, endDate, interval){
+    var categories = [];
+    var startingMonth = getMonth(startDate);
+    var startingYear = getYear(startDate);
+    var endingMonth = getMonth(endDate);
+    var endingYear = getYear(endDate);
+    var monthNames = [ "January", "February", "March", 
+                      "April", "May", "June",
+                      "July", "August", "September", 
+                      "October", "November", "December" ];
+
+    if (interval === "Month"){
+      for( var month = startingMonth, year = startingYear; month <= endingMonth || year < endingYear; month++){
+        // console.log("month is: " + month);
+        // console.log("year is: " + year);
+        if(month === 12){
+          month = -1;
+          year++;
+        } else {
+          categories.push(monthNames[month] + " - " + year);
+        };
+      };
+      var xAxis = {
+        title: {
+          text: interval
+        },
+        categories: categories
+      };
+    };
+
+    if (interval === "Year"){
+      for( var year = startingYear; year <= endingYear; year++){
+        // console.log("year is: " + year);
+        categories.push(year);
+      };
+      var xAxis = {
+        title: {
+          text: interval
+        },
+        categories: categories
+      };
+    };
+
+
+    console.log(xAxis);
+    return xAxis;
+  };
+
+  createXAxisLabels(formSubmission.startDate, formSubmission.endDate, formSubmission.interval);
+
+  var calculateAverage = function(arrayOfNumbers){
+    var sum = 0;
+    for(var i = 0; i < arrayOfNumbers.length; i++){
+      sum += arrayOfNumbers[i];
+    }
+    console.log("The sum is " + sum);
+    console.log("The array length is " + arrayOfNumbers.length);
+    if( arrayOfNumbers.length === 0){
+      return 0;
+    } else {
+      return average = sum / arrayOfNumbers.length;
+    };
+  };
+
+  var calculateArrayAverages = function(array){
+    var testAverages = [];
+    for (var i = 0; i < array.length; i++){
+      testAverages.push(calculateAverage(array[i]));
+    };
+    return testAverages;
+  };
+
+  var calculateTestAverages = function(testResults, startDate, endDate, interval){
+
+    var testAverages;
+    var arrayOfNumbers = [];
+    var arrayOfAverages = [];
+    var monthAverage = 0;
+    var intermediaryArray = [];
+
+    if( interval == "Month" ){
+      startingMonth = getMonth(startDate); // 3
+      endingMonth = getMonth(endDate); // 6
+      maxArrayIndex = endingMonth - startingMonth; //3
+
+      for (var i = 0; i <= maxArrayIndex; i++){
+        intermediaryArray[i] = [];  //Initialize the empty array here based on the size
+      };
+
+      for (var month = startingMonth,i=0; month <= endingMonth; month++,i++){
+      //Simply update the value of i when you update the value of month. 
+      //You don't have to enclose the whole thing into the loop that initialises intermediaryArray
+
+        for (var testNumber = 0; testNumber < testResults.length; testNumber++){
+          if ( getMonth(testResults[testNumber].dateCreated) == month ){
+            intermediaryArray[i].push(testResults[testNumber].score);
+          };
+        };
+      };
+    };
+
+    console.log(intermediaryArray);
+    return calculateArrayAverages(intermediaryArray);
+
+  };
+
 
   $(function () {
     $('#container').highcharts({
@@ -76,6 +204,7 @@ Template.territoriesAverage.rendered = function(){
     });
   });
 
+
   Tracker.autorun(function(){
     allTestResults = Tests.find({ }, {fields: {dateCreated: 1, territoryId: 1, 'test_result.test_score_total': 1, 'test_result.test_max_total': 1}}).fetch();
     console.log(allTestResults);
@@ -104,10 +233,14 @@ Template.territoriesAverage.rendered = function(){
     }
   });
 
+   // getTerritoryTestResults = function(territoryName){
+    //   var territoryId = getTerritoryId(territoryName)
+    //   console.log("terr ID:");
+    //   console.log(territoryId);
+    //   var territoryIdCriteria = {};
+    //   territoryIdCriteria.territoryId = territoryId;
+    //   return Tests.find( territoryIdCriteria, {fields: {territoryId: 1, 'test_result.test_score_total': 1, 'test_result.test_max_total': 1}}).fetch();
+    // };
 }
-
-
-
-
 
 

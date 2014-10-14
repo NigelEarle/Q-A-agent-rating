@@ -1,5 +1,32 @@
 <template name="territoriesAverage">
 
+	<form action="#" name="graphOptionsForm">
+    <div class="questions">
+    	<label for="startDate">Starting Date</label>
+    	<input type="text" name="startDate">
+    	<label for="endDate">Ending Date</label>
+    	<input type="text" name="endDate">
+    	<label for="interval">Time Interval</label>
+    	<select name="interval">
+			  <option>Week</option>
+			  <option>Month</option>
+			  <option>Year</option>
+			</select>
+			<br />
+    	<label for="territories">Territories</label>
+    	<input type="checkbox" name="territories[]" value="All">All<br />
+    	<input type="checkbox" name="territories[]" value="Asia">Asia<br />
+    	<input type="checkbox" name="territories[]" value="North America">North America<br />
+    	<input type="checkbox" name="territories[]" value="Europe">Europe<br />
+    	<input type="checkbox" name="territories[]" value="Africa">Africa<br />
+    	<label for="territories">Categories</label>
+    	<input type="radio" name="categories" value="All">All<br />
+    	<input type="radio" name="categories" value="Call Inbound">Call Inbound<br />
+    	<input type="radio" name="categories" value="Email">Email<br />
+    	<input type="submit" class="btn btn-success" value="Generate Graph">
+    </div>
+  </form>
+
   <div id="container" style="width:100%; height:400px;"></div>
 
 </template>
