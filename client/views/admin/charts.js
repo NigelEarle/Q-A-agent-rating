@@ -121,22 +121,41 @@ var getTerritoryTestResultsBetweenDates = function(category, territoryName, star
   var endDate = convertToDateObject(endDate);
   var territoryId = getTerritoryId(territoryName);
   var testResults = [];
-  var testResult = {};
   var category = category;
+  var dateCreated = {}
   if (category === "All"){
+    // console.log("start and end date");
+    // console.log(startDate);
+    // console.log(endDate);
     category = {"test_result.test_score_total": 1, "test_result.test_max_total": 1, dateCreated: 1};
-    var queryResults = Tests.find({territoryId: territoryId, dateCreated: {$gte: startDate, $lt: endDate}}, {fields: category}).fetch();
-    console.log("query results");
-    console.log(queryResults);
+    // console.log("territory Id");
+    // console.log(territoryId);
+    var queryResults = Tests.find({territoryId: territoryId, dateCreated: {$gt: new Date(startDate), $lt: new Date(endDate)} }, {fields: category}).fetch();
+    // console.log("query results - not in loop");
+    console.log("query results: ", queryResults);
     for (var i = 0; i < queryResults.length; i++){
-      testResult.dateCreated = queryResults[i].dateCreated;
-      testResult.score = (queryResults[i].test_result.test_score_total / queryResults[i].test_result.test_max_total) * 100;
-      testResults.push(testResult);
-    };  
+      var singleTestResult = {};
+      // console.log("in loop query result - " + i, queryResults[i]);
+      // console.log(queryResults[i]);
+      console.log("singleTestResult before changing properties in loop" + i, singleTestResult);
+      singleTestResult.dateCreated = queryResults[i].dateCreated;
+      // console.log("in loop singleTestResult dateCreated - " + i);
+      // console.log(singleTestResult.dateCreated);
+      singleTestResult.score = (queryResults[i].test_result.test_score_total / queryResults[i].test_result.test_max_total) * 100;
+      // console.log("in loop testResults before push - " + i);
+      // console.log(testResults);
+      // console.log("singleTestResult to push - " + i);
+      // console.log(singleTestResult);
+      console.log("singleTestResult after changing properties in loop" + i, singleTestResult);
+      testResults.push(singleTestResult);
+      // console.log("in loop testResults - " + i);
+      // console.log(testResults);
+    };
+    // console.log("test results");
+    console.log("testResults after loop: ", testResults);
+    return testResults;
   };
-  console.log("test results");
-  console.log(testResults);
-  return testResults;
+
 };
 
 calculateTestAverages = function(testResults, startDate, endDate, interval){
