@@ -1,9 +1,7 @@
-
 var convertToDateObject = function(date){
   dateObject = new Date(date);
   return dateObject;
 };
-
 
 var getMonth = function(date){
   return convertToDateObject(date).getMonth();
@@ -55,7 +53,7 @@ var createXAxisLabels = function(startDate, endDate, interval){
       categories: categories
     };
   };
-
+  console.log('xAxis');
   console.log(xAxis);
   return xAxis;
 };
@@ -120,8 +118,10 @@ var getTerritoryId = function(territoryName){
 };
 
 var getTerritoryTestResultsBetweenDates = function(category, territoryName, startDate, endDate){
-  var startDate = convertToDateObject(startDate);
-  var endDate = convertToDateObject(endDate);
+  var start = moment().format(startDate);
+  var end = moment().format(endDate);
+  var startDate = convertToDateObject(start);
+  var endDate = convertToDateObject(end);
   var territoryId = getTerritoryId(territoryName);
   var testResults = [];
   var category = category;
