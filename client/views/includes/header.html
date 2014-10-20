@@ -11,6 +11,11 @@
       </button>
       <a class="navbar-brand" href="#">Quintessentially</a>
     </div>
+    <div id="logout" class="pull-right control-group">
+      {{#if currentUser}}
+        <a href="{{pathFor 'login'}}">Logout</a>
+      {{/if}}
+    </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

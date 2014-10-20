@@ -118,10 +118,8 @@ var getTerritoryId = function(territoryName){
 };
 
 var getTerritoryTestResultsBetweenDates = function(category, territoryName, startDate, endDate){
-  var start = moment().format(startDate);
-  var end = moment().format(endDate);
-  var startDate = convertToDateObject(start);
-  var endDate = convertToDateObject(end);
+  var startDate = convertToDateObject(startDate);
+  var endDate = convertToDateObject(endDate);
   var territoryId = getTerritoryId(territoryName);
   var testResults = [];
   var category = category;

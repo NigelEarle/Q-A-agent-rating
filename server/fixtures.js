@@ -62,6 +62,19 @@ if (Meteor.users.find().count() === 0) {
         role: 'admin'
     }
   });
+
+  Accounts.createUser({
+    username: 'tester',
+    email: 'some@some.com',
+    password: '123456',
+    profile: {
+        first_name: 'Tester',
+        last_name: 'Account',
+        role: 'tester'
+    }
+  });
+
+
 }
 
 if (Tests.find().count() === 0){
