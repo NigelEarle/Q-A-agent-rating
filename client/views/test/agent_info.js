@@ -43,7 +43,7 @@ Template.agentInfo.events({
 
       Meteor.call('insertTest', test, function(error, testId){
         if (error){
-          console.log(error);
+          console.log("error: ", error);
         } else {
           console.log(testId);
           var redirectUrl = '/' + testId + '/greeting';

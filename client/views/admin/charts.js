@@ -24,8 +24,6 @@ var createXAxisLabels = function(startDate, endDate, interval){
 
   if (interval === "Month"){
     for( var month = startingMonth, year = startingYear; month <= endingMonth || year < endingYear; month++){
-      // console.log("month is: " + month);
-      // console.log("year is: " + year);
       if(month === 12){
         month = -1;
         year++;
@@ -43,7 +41,6 @@ var createXAxisLabels = function(startDate, endDate, interval){
 
   if (interval === "Year"){
     for( var year = startingYear; year <= endingYear; year++){
-      // console.log("year is: " + year);
       categories.push(year);
     };
     var xAxis = {
@@ -77,8 +74,6 @@ var calculateAverage = function(arrayOfNumbers){
   for(var i = 0; i < arrayOfNumbers.length; i++){
     sum += arrayOfNumbers[i];
   }
-  // console.log("The sum is " + sum);
-  // console.log("The array length is " + arrayOfNumbers.length);
   if( arrayOfNumbers.length === 0){
     return 0;
   } else {

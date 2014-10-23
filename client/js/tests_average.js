@@ -59,7 +59,7 @@ saveTestTotal = function(testId, testTotal){
   setHash.$set[insertionTarget] = testTotal;
   console.log("this is setHash:");
   console.log(setHash);
-  Tests.update(testId, setHash);
+  Meteor.call('updateTest', testId, setHash)
 }
 
 

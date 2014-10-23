@@ -51,7 +51,7 @@ saveCatTotal = function(testId, category, subcategory, catTotals){
   insertObj = "categories." + category + '.' + subcategory;
   var setObj = { $set: {} };
   setObj.$set[insertObj] = catTotals;
-  Tests.update(testId, setObj);
+  Meteor.call('updateTest', testId, setObj);
 };
 
 
