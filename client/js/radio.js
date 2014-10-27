@@ -32,7 +32,7 @@ generateTestData = function(questionsArray, subCat){
     console.log('i', i);
     score = questionsArray[i].score;
     console.log('score: ', score);
-    var questions = $('input[name="subCat' + '[' + i + '][score]"][value=' + score + ']').attr("checked", "true");
+    var questions = $('input[name="' + subCat + '[' + i + '][score]"][value=' + score + ']').attr("checked", "true");
     console.log('questions: ', questions);
   }
   return questions;
