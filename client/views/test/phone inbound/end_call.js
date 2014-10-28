@@ -11,5 +11,11 @@ Template.endCall.events({
   }
 });
 
+Template.endCall.rendered = function(){
+  unclickRadioButtons();
+  var questionsArray = findCurrentTestData(this.data, "phoneInbound", "end_call");
+  generateTestData(questionsArray, "end_call");
+};
+
 
 

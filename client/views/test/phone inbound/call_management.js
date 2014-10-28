@@ -7,3 +7,9 @@ Template.callManagement.events({
     Router.go(redirectUrl);
   }
 });
+
+Template.callManagement.rendered = function(){
+  unclickRadioButtons();
+  var questionsArray = findCurrentTestData(this.data, "phoneInbound", "call_management");
+  generateTestData(questionsArray, "call_management");
+};

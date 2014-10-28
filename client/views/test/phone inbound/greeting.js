@@ -10,6 +10,7 @@ Template.greeting.events({
 
 Template.greeting.rendered = function(){
   unclickRadioButtons();
-  var questionsArray = findCurrentTestData(this.data, "phoneInbound");
+  var questionsArray = findCurrentTestData(this.data, "phoneInbound", "greeting");
+  console.log("questionsArray: ", questionsArray);
   generateTestData(questionsArray, "greeting");
 };

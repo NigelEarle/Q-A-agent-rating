@@ -1,56 +1,25 @@
 Template.agentInfo.events({
-  "submit #agent-info-form": function (e, t) {
-    e.preventDefault();
-    var turf = $("#agent-territory").val()
-    var territoryId = Territories.find({name: turf}, {fields: {name: 0}}).fetch()[0];
+  "click #email": function () {
+    console.log("email");
 
-    var agent = {};
-    agent.first_name = $(e.target).find('[name=agent-first-name]').val()
-    agent.last_name = $(e.target).find('[name=agent-last-name]').val()
-    agent.email = $(e.target).find('[name=agent-email]').val()
-    agent.territoryId = territoryId._id
+    var agent = getAgentInfo();
+    console.log('email agent: ', agent);
+    findOrCreateNewAgent(agent);
+    var redirectUrl = '/' + testId + '/greeting';
+    Router.go(redirectUrl);
 
 
-    console.log("agent object:");
-    console.log(agent);
 
-    var test = {};
+  },
+  "click #phone":function(){
+    console.log("phone");
 
-    if ( Agents.findOne({email: agent.email}) ){
-
-      console.log("Agent exists");
-      var agent = Agents.findOne({email: agent.email, territoryId: agent.territoryId});
-      test.territoryId = agent.territoryId;
-      test.agentId = agent._id;
-
-      Meteor.call('insertTest', test, function(error, testId){
-        if (error){
-          console.log(error);
-        } else {
-          console.log(testId);
-          var redirectUrl = '/' + testId + '/greeting';
-          Router.go(redirectUrl);
-        }
-      });
-
-    } else {
-
-      console.log(territoryId);
-      test.territoryId = territoryId._id;
-
-      var agentId = Agents.insert(agent);
-      test.agentId = agentId;
-
-      Meteor.call('insertTest', test, function(error, testId){
-        if (error){
-          console.log("error: ", error);
-        } else {
-          console.log(testId);
-          var redirectUrl = '/' + testId + '/greeting';
-          Router.go(redirectUrl);
-        }
-      });
-
-    }
+    var agent = getAgentInfo();
+    console.log('phone agent: ', agent);
+    findOrCreateNewAgent(agent);
+    var redirectUrl = '/' + testId + '/timeManagement';
+    Router.go(redirectUrl);
   }
+
+
 });

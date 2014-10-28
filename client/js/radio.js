@@ -14,26 +14,18 @@ unclickRadioButtons = function(){
   }
 }
 
-findCurrentTestData = function(thisData, category){
+findCurrentTestData = function(thisData, category, subcategory){
   var data = thisData;
-  console.log('data: ', data);
-  var nestedData = data.categories[category];
-  console.log('nestedData: ', nestedData);
-  for(var key in nestedData){
-    var objectArray = nestedData[key].test;
-    console.log('test: ', objectArray);
-  }
-  return objectArray;
+  var nestedData = data.categories[category][subcategory];
+  nestedTestData = nestedData.test
+  console.log('nestedTestData: ', nestedTestData);
+  return nestedTestData;
 }
 
 generateTestData = function(questionsArray, subCat){
-  console.log('questionsArray: ', questionsArray.length);
   for(var i = 0; i < questionsArray.length; i++){
-    console.log('i', i);
     score = questionsArray[i].score;
-    console.log('score: ', score);
     var questions = $('input[name="' + subCat + '[' + i + '][score]"][value=' + score + ']').attr("checked", "true");
-    console.log('questions: ', questions);
   }
   return questions;
 }
