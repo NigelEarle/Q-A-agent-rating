@@ -1,24 +1,17 @@
 Template.agentInfo.events({
   "click #email": function () {
-    console.log("email");
-
+    // console.log("email");
     var agent = getAgentInfo();
-    console.log('email agent: ', agent);
-    findOrCreateNewAgent(agent);
-    var redirectUrl = '/' + testId + '/greeting';
-    Router.go(redirectUrl);
-
+    // console.log('email agent: ', agent);
+    findOrCreateNewAgent(agent, "time_management");
 
 
   },
   "click #phone":function(){
-    console.log("phone");
-
-    var agent = getAgentInfo();
-    console.log('phone agent: ', agent);
-    findOrCreateNewAgent(agent);
-    var redirectUrl = '/' + testId + '/timeManagement';
-    Router.go(redirectUrl);
+    // console.log("phone");
+    var agentIn = getAgentInfo();
+    // console.log('phone agent: ', agentIn);
+    findOrCreateNewAgent(agentIn, "greeting");
   }
 
 

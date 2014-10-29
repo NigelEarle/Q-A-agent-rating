@@ -10,6 +10,7 @@ Template.callManagement.events({
 
 Template.callManagement.rendered = function(){
   unclickRadioButtons();
+  console.log('test:')
   var questionsArray = findCurrentTestData(this.data, "phoneInbound", "call_management");
   generateTestData(questionsArray, "call_management");
 };
