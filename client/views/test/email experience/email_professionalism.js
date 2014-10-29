@@ -9,8 +9,13 @@ Template.emailProfessionalism.events({
 
     var testTotal = returnTestTotals(findObject(this._id));
     saveTestTotal(this._id, testTotal);
+  },
 
+  "click button": function(){
+    var previous = '/' + this._id + "/personalization";
+    Router.go(previous);
   }
+
 });
 
 Template.emailProfessionalism.rendered = function(){

@@ -5,6 +5,12 @@ Template.clarification.events({
 
     var redirectUrl = "/" + this._id + "/q_benefits";
     Router.go(redirectUrl);
+  },
+
+
+  "click button": function(){
+    var previous = '/' + this._id + "/time_management";
+    Router.go(previous);
   }
 });
 

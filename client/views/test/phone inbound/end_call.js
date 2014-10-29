@@ -7,6 +7,11 @@ Template.endCall.events({
 
     var redirectUrl = '/' + this._id + '/call_professionalism';
     Router.go(redirectUrl);
+  },
+
+  "click button": function(){
+    var previous = "/" + this._id + "/call_management";
+    Router.go(previous);
   }
 });
 

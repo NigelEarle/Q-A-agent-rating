@@ -17,10 +17,10 @@ findOrCreateNewAgent = function(agent, category){
     var agent = Agents.findOne({email: agent.email, territoryId: agent.territoryId});
     test.territoryId = agent.territoryId;
     test.agentId = agent._id;
-    // console.log('testing:: ', test);
+    test.dateCreated = new Date();
+    console.log('testing:: ', test);
     var testId = Tests.insert(test);
     var redirectUrl = '/' + testId + '/' + category + '';
-    // console.log('redirectUrl: ', redirectUrl);
     Router.go(redirectUrl);
 
   } else {
@@ -28,13 +28,13 @@ findOrCreateNewAgent = function(agent, category){
     agentTerritoryId = agent.territoryId
     test.territoryId = agentTerritoryId;
     console.log('test.territoryId: ', test.territoryId);
-
+    test.dateCreated = new Date();
     var agentId = Agents.insert(agent);
     test.agentId = agentId;
+    console.log('test: ', test);
     // console.log('test.agentId: ', test.agentId);
     var testId = Tests.insert(test);
     var redirectUrl = '/' + testId + '/' + category + '';
-    // console.log('redirectUrl: ', redirectUrl);
     Router.go(redirectUrl);
 
   }

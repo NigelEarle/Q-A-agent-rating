@@ -5,6 +5,11 @@ Template.callManagement.events({
 
     var redirectUrl = '/' + this._id + "/end_call";
     Router.go(redirectUrl);
+  },
+
+  "click button": function(){
+    var previous = '/' + this._id + "/greeting";
+    Router.go(previous);
   }
 });
 

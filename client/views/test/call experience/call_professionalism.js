@@ -12,6 +12,17 @@ Template.callProfessionalism.events({
     // var territoryTotal = (findTestsResults(this.territoryId));
     // saveTerritoryTotal(this.territoryId, territoryTotal);
 
-    Router.go('testComplete');
+    // Router.go('testComplete');
+  },
+
+  "click button": function(){
+    var previous = "/" + this._id + "/end_call";
+    Router.go(previous);
   }
 });
+
+Template.callProfessionalism.rendered = function(){
+  unclickRadioButtons();
+  var questionsArray = findCurrentTestData(this.data, "callExperience", "call_professionalism");
+  generateTestData(questionsArray, "call_professionalism");
+};

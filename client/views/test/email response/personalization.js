@@ -8,6 +8,11 @@ Template.personalization.events({
 
     var redirectUrl = "/" + this._id + "/email_professionalism";
     Router.go(redirectUrl);
+  },
+
+  "click button": function(){
+    var previous = '/' + this._id + "/q_benefits";
+    Router.go(previous);
   }
 });
 

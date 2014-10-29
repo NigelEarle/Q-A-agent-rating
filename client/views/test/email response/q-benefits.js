@@ -5,6 +5,11 @@ Template.qBenefits.events({
 
     var redirectUrl = "/" + this._id + "/personalization";
     Router.go(redirectUrl);
+  },
+
+  "click button": function(){
+    var previous = '/' + this._id + "/clarification";
+    Router.go(previous);
   }
 });
 
