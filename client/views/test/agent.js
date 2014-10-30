@@ -32,7 +32,7 @@ findOrCreateNewAgent = function(agent, category){
     var agentId = Agents.insert(agent);
     test.agentId = agentId;
     console.log('test: ', test);
-    // console.log('test.agentId: ', test.agentId);
+
     var testId = Tests.insert(test);
     var redirectUrl = '/' + testId + '/' + category + '';
     Router.go(redirectUrl);
