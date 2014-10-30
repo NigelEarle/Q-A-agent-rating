@@ -25,17 +25,25 @@ findOrCreateNewAgent = function(agent, category){
 
   } else {
     // console.log("territory: ", agent.territoryId);
-    agentTerritoryId = agent.territoryId
-    test.territoryId = agentTerritoryId;
-    console.log('test.territoryId: ', test.territoryId);
-    test.dateCreated = new Date();
-    var agentId = Agents.insert(agent);
-    test.agentId = agentId;
-    console.log('test: ', test);
+    // agentTerritoryId = agent.territoryId
+    // test.territoryId = agentTerritoryId;
+    // console.log('test.territoryId: ', test.territoryId);
+    // test.dateCreated = new Date();
 
-    var testId = Tests.insert(test);
-    var redirectUrl = '/' + testId + '/' + category + '';
-    Router.go(redirectUrl);
+    Meteor.call('insertAgent', agent, function(error, testId){
+      if(error){
+        throwError(error.reason);
+      } else{
+        console.log('callback recieved:', testId);
+        var redirectUrl = '/' + testId + '/' + category + '';
+        Router.go(redirectUrl);
+      }
+    });
+    // var agentId = Agents.insert(agent);
+    // test.agentId = agentId;
+    // console.log('test: ', test);
+
+    // var testId = Tests.insert(test);
 
   }
 }

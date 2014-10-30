@@ -9,6 +9,4 @@ accounts-base
 iron:router
 less
 simison:bootstrap3-less
-mrt:moment
 email
-

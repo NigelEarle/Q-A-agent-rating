@@ -8,11 +8,11 @@ Tests.allow({
 
 Meteor.methods({
 
-	// insertTest: function(testAttributes){
-	// 	testAttributes.dateCreated = new Date();
-	// 	var testId = Tests.insert(testAttributes);
-	// 	return testId;
-	// },
+	insertTest: function(testAttributes){
+		testAttributes.dateCreated = new Date();
+		var testId = Tests.insert(testAttributes);
+		return testId;
+	},
 
 	updateTest: function(testId, setHash){
 		Tests.update(testId, setHash);
