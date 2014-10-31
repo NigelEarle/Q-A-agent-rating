@@ -10,11 +10,11 @@ Meteor.methods({
   insertAgent: function(agentAttributes){
 
     checkEmail = function(address){
-      address=address.replace(/(^\s*)|(\s*$)/g, "");
-      var reg=/([\w._-])+@([\w_-])+(\.([\w_-])+){1,2}/;
-      var matcharr=reg.exec(address);
-      if(matcharr!=null){
-          if(matcharr[0].length==address.length){
+      address = address.replace(/(^\s*)|(\s*$)/g, "");
+      var reg = /([\w._-])+@([\w_-])+(\.([\w_-])+){1,2}/;
+      var matcharr = reg.exec(address);
+      if(matcharr != null){
+          if(matcharr[0].length == address.length){
               return true;
           }
           return false;

@@ -7,7 +7,8 @@ Template.login.events({
 
     Meteor.loginWithPassword(username, password, function(error){
       if(error){
-        console.log('error');
+        console.log('error', error);
+        throwError(error.reason);
       } else {
         if (Meteor.user().profile.role === "admin"){
           console.log("admin login");
