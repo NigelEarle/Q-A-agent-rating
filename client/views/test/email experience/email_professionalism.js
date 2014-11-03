@@ -9,6 +9,9 @@ Template.emailProfessionalism.events({
 
     var testTotal = returnTestTotals(findObject(this._id));
     saveTestTotal(this._id, testTotal);
+
+    var redirectUrl = '/' + this._id + '/email_experience_complete';
+    Router.go(redirectUrl);
   },
 
   "click button": function(){

@@ -6,7 +6,7 @@ Template.personalization.events({
     var catTotals = returnCatTotals(findResultObject(this._id, "emailResponse"));
     saveCatTotal(this._id, "emailResponse", "cat_result", catTotals );
 
-    var redirectUrl = "/" + this._id + "/email_professionalism";
+    var redirectUrl = "/" + this._id + "/email_response_complete";
     Router.go(redirectUrl);
   },
 

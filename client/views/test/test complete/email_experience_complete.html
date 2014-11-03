@@ -10,7 +10,7 @@
 
       <div class="sub-cat">
         <h2>Email Professionalism</h2>
-          67%
+        {{email_experience}}
       </div>
 
 
@@ -38,21 +38,28 @@
         <div class="col-md-3">
           <div class="first">
             <div class="score-percent">
-              78%
+              {{time_management}}
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="middle">
             <div class="score-percent">
-              56%
+              {{clarification}}
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="last">
             <div class="score-percent">
-              39%
+              {{q_benefits}}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="last">
+            <div class="score-percent">
+              {{personalization}}
             </div>
           </div>
         </div>
@@ -63,7 +70,7 @@
           <h2>Email Response</h2>
         </div>
         <div class="cat-score">
-          68%
+          {{email_response}}
         </div>
       </div>
 
@@ -71,11 +78,11 @@
       <div class="test-score">
         <h1>Test Score Percentage</h1>
         <div class="test-score-percent">
-          90%
+          {{test_results}}
         </div>
       </div>
 
-      <button type="button" class="btn btn-warning">Logout</button>
+      <button type="button" id="logout" class="btn btn-warning">Logout</button>
 
     </div>
   </div>

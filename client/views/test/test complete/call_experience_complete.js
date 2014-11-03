@@ -54,3 +54,12 @@ Template.callExperienceComplete.helpers({
 
   }
 });
+
+Template.callExperienceComplete.events({
+  "click #logout": function() {
+
+    Meteor.logout();
+    Router.go('login');
+
+  }
+})

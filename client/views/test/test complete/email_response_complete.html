@@ -28,28 +28,28 @@
       <div class="col-md-3">
         <div class="first">
           <div class="score-percent">
-            78%
+            {{time_management}}
           </div>
         </div>
       </div>
       <div class="col-md-3">
         <div class="middle">
           <div class="score-percent">
-            56%
+            {{clarification}}
           </div>
         </div>
       </div>
       <div class="col-md-3">
         <div class="last">
           <div class="score-percent">
-            39%
+            {{q_benefits}}
           </div>
         </div>
       </div>
       <div class="col-md-3">
         <div class="last">
           <div class="score-percent">
-            39%
+            {{personalization}}
           </div>
         </div>
       </div>
@@ -58,9 +58,9 @@
       <h2>Email Response</h2>
     </div>
     <div class="cat-score">
-      68%
+      {{email_response}}
     </div>
-    <button type="button" class="btn btn-warning">Finish Test And Logout</button>
-    <button type="button" class="btn btn-success">Continue On To Email Experience</button>
+    <button type="button" id="logout" class="btn btn-warning">Finish Test And Logout</button>
+    <button type="button" id="continue" class="btn btn-success">Continue On To Email Experience</button>
   </div>
 </template>
