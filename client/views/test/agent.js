@@ -6,7 +6,6 @@ getAgentInfo = function() {
   agent.last_name = $("#agent-info-form").find('[name=agent-last-name]').val()
   agent.email = $("#agent-info-form").find('[name=agent-email]').val()
   agent.territoryId = territoryId._id
-  // console.log("agent object:", agent);
   return agent;
 }
 
@@ -14,7 +13,7 @@ findOrCreateNewAgent = function(agent, category){
   var test = {};
   if ( Agents.findOne({email: agent.email}) ){
     // console.log("Agent exists");
-    var agent = Agents.findOne({email: agent.email, territoryId: agent.territoryId});
+    var agent = Agents.findOne({email: agent.email});
     test.territoryId = agent.territoryId;
     test.agentId = agent._id;
     test.dateCreated = new Date();
@@ -24,11 +23,6 @@ findOrCreateNewAgent = function(agent, category){
     Router.go(redirectUrl);
 
   } else {
-    // console.log("territory: ", agent.territoryId);
-    // agentTerritoryId = agent.territoryId
-    // test.territoryId = agentTerritoryId;
-    // console.log('test.territoryId: ', test.territoryId);
-    // test.dateCreated = new Date();
 
     Meteor.call('insertAgent', agent, function(error, testId){
       if(error){
@@ -39,11 +33,5 @@ findOrCreateNewAgent = function(agent, category){
         Router.go(redirectUrl);
       }
     });
-    // var agentId = Agents.insert(agent);
-    // test.agentId = agentId;
-    // console.log('test: ', test);
-
-    // var testId = Tests.insert(test);
-
   }
 }

@@ -11,7 +11,7 @@ Template.login.events({
         throwError(error.reason);
       } else {
         if (Meteor.user().profile.role === "admin"){
-          console.log("admin login");
+          // console.log("admin login");
           Router.go("adminChoice");
         } else if (Meteor.user().profile.role === "tester"){
           console.log("tester login");
@@ -20,7 +20,6 @@ Template.login.events({
       };
 
     });
-
 
   }
 });
