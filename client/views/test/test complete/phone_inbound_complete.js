@@ -36,5 +36,21 @@ Template.phoneInboundComplete.helpers({
 
     return percent
   }
-
 });
+
+Template.phoneInboundComplete.events({
+  "click #logout": function(e){
+    e.preventDefault();
+
+    Meteor.logout();
+    console.log('logged out');
+    Router.go('login');
+  },
+
+  "click #continue": function(e){
+    e.preventDefault();
+
+    var redirectUrl = '/' + this._id + '/call_professionalism';
+    Router.go(redirectUrl);
+  }
+})

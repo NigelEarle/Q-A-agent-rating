@@ -11,8 +11,8 @@ Template.callProfessionalism.events({
 
     // var territoryTotal = (findTestsResults(this.territoryId));
     // saveTerritoryTotal(this.territoryId, territoryTotal);
-
-    // Router.go('testComplete');
+    var redirectUrl = '/' + this._id + '/call_experience_complete';
+    Router.go(redirectUrl);
   },
 
   "click button": function(){
