@@ -5,7 +5,7 @@ Template.endCall.events({
     var catTotals = returnCatTotals(findResultObject(this._id, "phoneInbound"));
     saveCatTotal(this._id, "phoneInbound", "cat_result", catTotals );
 
-    var redirectUrl = '/' + this._id + '/call_professionalism';
+    var redirectUrl = '/' + this._id + '/phone_inbound_complete';
     Router.go(redirectUrl);
   },
 
