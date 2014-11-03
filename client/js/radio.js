@@ -16,7 +16,9 @@ unclickRadioButtons = function(){
 
 findCurrentTestData = function(thisData, category, subcategory){
   var data = thisData;
+  console.log('data', data);
   var nestedData = data.categories[category][subcategory];
+  console.log('nestedTestDatas: ', nestedData);
   nestedTestData = nestedData.test
   console.log('nestedTestData: ', nestedTestData);
   return nestedTestData;
