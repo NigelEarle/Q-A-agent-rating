@@ -4,10 +4,11 @@ Template.phoneInboundComplete.helpers({
     // console.log('greeting results: ', greetingResults);
     var greetingScore = greetingResults.total_score;
     var greetingMax = greetingResults.max_score;
-    // if(greetingScore == NaN){
-    //   greetingScore
+    // if(greetingScore/greetingMax * 100 == NaN){
+    //   render 0;
     // } else{
     var percent = Math.floor(greetingScore / greetingMax * 100);
+    percent = percent || 0;
     return percent
 
     // }
@@ -21,6 +22,7 @@ Template.phoneInboundComplete.helpers({
     var callManagementMax = callManagementResults.max_score;
     var percent = Math.floor(callManagementScore / callManagementMax * 100);
     // console.log('percent: ', percent);
+    percent = percent || 0;
     return percent
   },
 
@@ -31,6 +33,7 @@ Template.phoneInboundComplete.helpers({
     var endCallMax = endCallResults.max_score;
     var percent = Math.floor(endCallScore / endCallMax * 100);
     // console.log('percent: ', percent);
+    percent = percent || 0;
     return percent
   },
 
@@ -38,7 +41,7 @@ Template.phoneInboundComplete.helpers({
     phoneInboundPercent = this.categories.phoneInbound.cat_result.cat_percent;
     console.log('cat results: ', phoneInboundPercent);
     percent = Math.floor(phoneInboundPercent);
-
+    percent = percent || 0;
     return percent
   }
 });

@@ -6,6 +6,7 @@ Template.emailResponseComplete.helpers({
     var timeManagementMax = timeManagementResults.max_score;
     var percent = Math.floor(timeManagementScore / timeManagementMax * 100);
     // console.log('percent: ', percent);
+    percent = percent || 0;
     return percent
   },
 
@@ -16,6 +17,7 @@ Template.emailResponseComplete.helpers({
     var clarificationMax = clarificationResults.max_score;
     var percent = Math.floor(clarificationScore / clarificationMax * 100);
     // console.log('percent: ', percent);
+    percent = percent || 0;
     return percent
   },
 
@@ -26,6 +28,7 @@ Template.emailResponseComplete.helpers({
     var qBenefitsMax = qBenefitsResults.max_score;
     var percent = Math.floor(qBenefitsScore / qBenefitsMax * 100);
     // console.log('percent: ', percent);
+    percent = percent || 0;
     return percent
   },
 
@@ -36,6 +39,7 @@ Template.emailResponseComplete.helpers({
     var personalizationMax = personalizationResults.max_score;
     var percent = Math.floor(personalizationScore / personalizationMax * 100);
     // console.log('percent: ', percent);
+    percent = percent || 0;
     return percent
   },
 
@@ -44,6 +48,7 @@ Template.emailResponseComplete.helpers({
     // console.log('cat results: ', emailResponsePercent);
     percent = Math.floor(emailResponsePercent);
     // console.log(percent);
+    percent = percent || 0;
     return percent
   }
 });
