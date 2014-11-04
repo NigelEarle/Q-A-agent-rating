@@ -4,52 +4,69 @@
       <h1>Congratulations!</h1>
       <h2>You've Completed the Phone Inbound Category!</h2>
     </div>
-    <div class="sub-cat">
-      <div class="col-md-4">
-        <h2>Greeting</h2>
-      </div>
-      <div class="col-md-4">
-        <div class="middle">
-          <h2>Call Management</h2>
+    <div class="core-test">
+      <div class="sub-cat">
+        <div class="col-md-4">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 id="short" class="panel-title">Greeting</h3>
+            </div>
+            <div class="panel-body">
+              <div class="sub-cat-score">{{greeting}}%</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="last">
-          <h2>End Call</h2>
+        <div class="col-md-4">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">Call Management</h3>
+            </div>
+            <div class="panel-body">
+              <div class="sub-cat-score">{{call_management}}%</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="first">
-          <div class="score-percent">
-            {{greeting}}
+        <div class="col-md-4">
+
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 id="short" class="panel-title">End Call</h3>
+            </div>
+            <div class="panel-body">
+            <div class="sub-cat-score">{{end_call}}%</div>
+
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="middle">
-          <div class="score-percent">
-            {{call_management}}
+      <div class="cat">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h1 class="panel-title">Phone Inbound</h1>
+            </div>
+            <div class="panel-body">
+              <div class="cat-score">{{phone_inbound}}%</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="last">
-          <div class="score-percent">
-            {{end_call}}
-          </div>
+        <div class="col-md-3">
         </div>
       </div>
     </div>
-    <div class="cat">
-      <div class="cat-title">
-        <h2>Phone Inbound</h2>
-      </div>
-      <div class="cat-score">
-        {{phone_inbound}}
-      </div>
+    <div class="col-md-6">
+      <button type="button" id="logout" class="btn btn-warning">
+        <p>Finish Test And Logout</p>
+      </button>
     </div>
-    <button type="button" id="logout" class="btn btn-warning">Finish Test And Logout</button>
-    <button type="button" id="continue" class="btn btn-success">Continue On To Call Experience</button>
+    <div class="col-md-6">
+      <button type="button" id="continue" class="btn btn-success">
+        <p>Continue On To Call Experience</p>
+      </button>
+    </div>
+
   </div>
 </template>
 

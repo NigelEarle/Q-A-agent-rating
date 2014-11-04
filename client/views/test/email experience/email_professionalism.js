@@ -24,6 +24,6 @@ Template.emailProfessionalism.events({
 Template.emailProfessionalism.rendered = function(){
   unclickRadioButtons();
   var questionsArray = findCurrentTestData(this.data, "emailExperience", "email_professionalism");
-  console.log('questionsArray: ', questionsArray);
+  // console.log('questionsArray: ', questionsArray);
   generateTestData(questionsArray, "email_professionalism");
 };
