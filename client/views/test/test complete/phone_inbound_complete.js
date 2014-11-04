@@ -4,9 +4,14 @@ Template.phoneInboundComplete.helpers({
     // console.log('greeting results: ', greetingResults);
     var greetingScore = greetingResults.total_score;
     var greetingMax = greetingResults.max_score;
+    // if(greetingScore == NaN){
+    //   greetingScore
+    // } else{
     var percent = Math.floor(greetingScore / greetingMax * 100);
-    // console.log('percent: ', percent);
     return percent
+
+    // }
+    // console.log('percent: ', percent);
   },
 
   call_management: function(){

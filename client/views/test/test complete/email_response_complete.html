@@ -3,64 +3,82 @@
     <div class="post-form">
       <h1>Congratulations!</h1>
       <h2>You've Completed the Email Response Category!</h2>
+      <p>Feel Free To Go Back And Review Your Answers To Make Sure They Are All Correct</p>
+
     </div>
-    <div class="sub-cat">
-      <div class="col-md-3">
-        <div class="first">
-          <h2>Time Management</h2>
+    <div class="email-response-test">
+      <div class="sub-cat">
+        <div class="col-md-3">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">Time Management</h3>
+            </div>
+            <div class="panel-body">
+              <div class="sub-cat-score">{{time_management}}%</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="middle">
-          <h2>Clarification</h2>
+        <div class="col-md-3">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 id="clarification" class="panel-title">Clarification</h3>
+            </div>
+            <div class="panel-body">
+              <div class="sub-cat-score">{{clarification}}%</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="middle-last">
-          <h2>Q Benefits</h2>
+        <div class="col-md-3">
+
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 id="q_benefits" class="panel-title">Q Benefits</h3>
+            </div>
+            <div class="panel-body">
+              <div class="sub-cat-score">{{q_benefits}}%</div>
+
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="last">
-          <h2>Personalization</h2>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="first">
-          <div class="score-percent">
-            {{time_management}}
+        <div class="col-md-3">
+
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 id="personalization" class="panel-title">Personalization</h3>
+            </div>
+            <div class="panel-body">
+              <div class="sub-cat-score">{{personalization}}%</div>
+
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="middle">
-          <div class="score-percent">
-            {{clarification}}
+      <div class="cat">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h1 class="panel-title">Email Response</h1>
+            </div>
+            <div class="panel-body">
+              <div class="cat-score">{{email_response}}%</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="last">
-          <div class="score-percent">
-            {{q_benefits}}
-          </div>
+        <div class="col-md-4">
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="last">
-          <div class="score-percent">
-            {{personalization}}
-          </div>
-        </div>
+      <div class="col-md-6">
+        <button type="button" id="logout" class="btn btn-warning">
+          <p>Logout To Complete Test</p>
+        </button>
+      </div>
+      <div class="col-md-6">
+        <button type="button" id="continue" class="btn btn-success">
+          <p>Continue To Email Experience</p>
+        </button>
       </div>
     </div>
-    <div class="cat-title">
-      <h2>Email Response</h2>
-    </div>
-    <div class="cat-score">
-      {{email_response}}
-    </div>
-    <button type="button" id="logout" class="btn btn-warning">Finish Test And Logout</button>
-    <button type="button" id="continue" class="btn btn-success">Continue On To Email Experience</button>
   </div>
 </template>
