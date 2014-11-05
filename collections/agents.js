@@ -44,12 +44,6 @@ Meteor.methods({
       throw new Meteor.Error(400, "Incorrect email format. Please check the address again and type again.");
 
     var agentId = Agents.insert(agentAttributes);
-    // var test = {};
-    // var agentTerritoryId = agentAttributes.territoryId;
-    // test.territoryId = agentTerritoryId;
-    // test.agentId = agentId;
-    // test.dateCreated = new Date();
-    // var testId = Tests.insert(test);
     return agentId
   }
 

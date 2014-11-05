@@ -31,7 +31,7 @@ findOrCreateNewAgent = function(agent, category){
         var agentTerritoryId = agent.territoryId;
         test.territoryId = agentTerritoryId;
         test.agentId = agentId;
-        console.log('agent Id: ', agentId);
+        // console.log('agent Id: ', agentId);
         test.dateCreated = new Date();
         var testId = Tests.insert(test);
             // console.log('callback recieved:', testId);
