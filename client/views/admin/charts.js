@@ -63,7 +63,7 @@ var createYAxisLabels = function(seriesData){
     }
   };
   if (seriesData === "territory_average_percent"){
-    yAxis.title.text = "Percentage";
+    yAxis.title.text = "Territory Ratings Percentage";
   };
   return yAxis;
 };
@@ -120,21 +120,21 @@ var getTerritoryTestResultsBetweenDates = function(category, territoryName, star
   var category = category;
   var dateCreated = {}
   if (category === "All"){
-    // console.log("start and end date");
-    // console.log(startDate);
-    // console.log(endDate);
+    console.log("1.)start and end date");
+    console.log(startDate);
+    console.log(endDate);
     category = {"test_result.test_score_total": 1, "test_result.test_max_total": 1, dateCreated: 1};
-    // console.log("territory Id");
-    // console.log(territoryId);
+    console.log("2.)territory Id");
+    console.log(territoryId);
     var queryResults = Tests.find({territoryId: territoryId, dateCreated: {$gt: new Date(startDate), $lt: new Date(endDate)} }, {fields: category}).fetch();
-    // console.log("query results - not in loop");
-    console.log("query results: ", queryResults);
+    console.log("3.)query results - not in loop");
+    console.log("4.)query results: ", queryResults);
     for (var i = 0; i < queryResults.length; i++){
 
       var singleTestResult = {};
-      // console.log("in loop query result - " + i, queryResults[i]);
-      // console.log(queryResults[i]);
-      console.log("singleTestResult before changing properties in loop" + i, singleTestResult);
+      console.log("5.)in loop query result - " + i, queryResults[i]);
+      console.log(queryResults[i]);
+      console.log("6.)singleTestResult before changing properties in loop" + i, singleTestResult);
       singleTestResult.dateCreated = queryResults[i].dateCreated;
       // console.log("in loop singleTestResult dateCreated - " + i);
       // console.log(singleTestResult.dateCreated);
@@ -143,13 +143,13 @@ var getTerritoryTestResultsBetweenDates = function(category, territoryName, star
       // console.log(testResults);
       // console.log("singleTestResult to push - " + i);
       // console.log(singleTestResult);
-      console.log("singleTestResult after changing properties in loop" + i, singleTestResult);
+      console.log("7.)singleTestResult after changing properties in loop" + i, singleTestResult);
       testResults.push(singleTestResult);
-      // console.log("in loop testResults - " + i);
-      // console.log(testResults);
+      console.log("in loop testResults - " + i);
+      console.log(testResults);
     };
     // console.log("test results");
-    console.log("testResults after loop: ", testResults);
+    console.log("END))testResults after loop: ", testResults);
     return testResults;
   };
 
@@ -279,7 +279,7 @@ createChartObject = function(seriesNames, seriesData, startDate, endDate, interv
         text: 'Territory Average Comparison'
     },
     subtitle: {
-        text: '#'
+        text: 'Ratings Based On Percentage '
     },
     xAxis: createXAxisLabels(startDate, endDate, interval),
     yAxis: createYAxisLabels(seriesData),

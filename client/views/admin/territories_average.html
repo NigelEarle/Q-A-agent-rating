@@ -1,42 +1,52 @@
 <template name="territoriesAverage">
+  <div id="territories-graph">
+    <div class="title">
+      <h1>Territories Rating Percent Average</h1>
+      <p>Fill In The Graph Fields To Generate A Graph</p>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+      	<form action="#" name="graphOptionsForm">
+          <div class="container-fluid">
+            <div class="questions">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                	<label for="startDate">Starting Date</label>
+                	<input type="date" id="start" name="startDate">
+                  <label for="endDate">Ending Date</label>
+                  <input type="date" id="end" name="endDate">
+                	<label for="interval">Time Interval</label>
+                	<select name="interval">
+            			  <option>Month</option>
+            			  <option>Year</option>
+            			</select>
 
-	<form action="#" name="graphOptionsForm">
-    <div class="container-fluid">
-      <div class="questions">
-        <div class="row">
-          <div class="col-md-3">
-          	<label for="startDate">Starting Date</label>
-          	<input type="date" id="start" name="startDate">
-            <label for="endDate">Ending Date</label>
-            <input type="date" id="end" name="endDate">
-          	<label for="interval">Time Interval</label>
-          	<select name="interval">
-      			  <option>Month</option>
-      			  <option>Year</option>
-      			</select>
-          </div>
-        </div>
-  			<br />
-        <div class="row">
-          <div class="col-md-3">
-          	<p><b>Territories</b></p>
+        			    <br />
 
-          	<input type="checkbox" name="territories[]" value="All">All<br />
-          	<input type="checkbox" name="territories[]" value="Asia">Asia<br />
-          	<input type="checkbox" name="territories[]" value="North America">North America<br />
-          	<input type="checkbox" name="territories[]" value="Europe">Europe<br />
-          	<input type="checkbox" name="territories[]" value="Africa">Africa<br />
-            <p><b>Categories</b></p>
-          	<input type="radio" name="categories" value="All">All<br />
-          	<input type="radio" name="categories" value="Call Inbound">Call Inbound<br />
-          	<input type="radio" name="categories" value="Email">Email<br />
-          	<input type="submit" class="btn btn-success" value="Generate Graph">
+                	<p><b>Territories</b></p>
+
+                	<input type="checkbox" name="territories[]" value="All">All<br />
+                	<input type="checkbox" name="territories[]" value="Asia">Asia<br />
+                	<input type="checkbox" name="territories[]" value="North America">North America<br />
+                	<input type="checkbox" name="territories[]" value="Europe">Europe<br />
+                	<input type="checkbox" name="territories[]" value="Africa">Africa<br />
+                  <p><b>Categories</b></p>
+                	<input type="radio" name="categories" value="Call Inbound">Phone Inbound<br />
+                	<input type="radio" name="categories" value="Email">Email Response<br />
+                  <input type="radio" name="categories" value="Email">Email Experience<br />
+                  <input type="radio" name="categories" value="Email">Call Experience<br />
+
+                	<input type="submit" class="btn btn-success" value="Generate Graph">
+
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </form>
+      </div>
+      <div class="col-md-9">
+        <div id="container" style="width:100%; height:500px;"></div>
       </div>
     </div>
-  </form>
-
-  <div id="container" style="width:100%; height:400px;"></div>
-
+  </div>
 </template>
