@@ -24,11 +24,17 @@ findOrCreateNewAgent = function(agent, category){
 
   } else {
 
-    Meteor.call('insertAgent', agent, function(error, testId){
+    Meteor.call('insertAgent', agent, function(error, agentId){
       if(error){
         throwError(error.reason);
       } else{
-        console.log('callback recieved:', testId);
+        var agentTerritoryId = agent.territoryId;
+        test.territoryId = agentTerritoryId;
+        test.agentId = agentId;
+        console.log('agent Id: ', agentId);
+        test.dateCreated = new Date();
+        var testId = Tests.insert(test);
+            // console.log('callback recieved:', testId);
         var redirectUrl = '/' + testId + '/' + category + '';
         Router.go(redirectUrl);
       }

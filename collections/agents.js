@@ -43,26 +43,13 @@ Meteor.methods({
     if (checkEmail(agentAttributes.email) === false)
       throw new Meteor.Error(400, "Incorrect email format. Please check the address again and type again.");
 
-
-
-
-    // if (!this.isSimulation){
-    //   var Future = Npm.require('fibers/future');
-
-    //   var future = new Future();
-
-    //   Meteor.setTimeout(function(){
-    //     future.return();
-    //   }, 5 * 1000);
-    //   future.wait();
-    // }
     var agentId = Agents.insert(agentAttributes);
-    var test = {};
-    var agentTerritoryId = agentAttributes.territoryId;
-    test.territoryId = agentTerritoryId;
-    test.agentId = agentId;
-    test.dateCreated = new Date();
-    var testId = Tests.insert(test);
+    // var test = {};
+    // var agentTerritoryId = agentAttributes.territoryId;
+    // test.territoryId = agentTerritoryId;
+    // test.agentId = agentId;
+    // test.dateCreated = new Date();
+    // var testId = Tests.insert(test);
     return agentId
   }
 
