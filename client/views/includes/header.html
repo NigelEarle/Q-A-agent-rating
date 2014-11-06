@@ -9,55 +9,21 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      <a class="navbar-brand" href="{{pathFor 'login'}}">Quintessentially</a>
+      <a class="navbar-brand" href="{{pathFor 'login'}}">Q U I N T E S S E N T I A L L Y</a>
 
 
       </div>
-      <div id="logout" class="pull-right control-group">
-        {{#if currentUser}}
-          <a href="{{pathFor 'login'}}">Logout</a>
-        {{/if}}
-      </div>
+      {{#if currentUser}}
+        <p>Signed in as {{currentUser.username}}</p>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div id="logout" class="pull-right control-group">
+            <!-- <ul class="nav navbar-nav"> -->
+              <a class="logout" href="{{pathFor 'login'}}">Logout</a>
+            <!-- </ul> -->
+          </div>
+        </div>
+      {{/if}}
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Phone Inbound <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="{{pathFor 'greeting'}}">Greeting</a></li>
-            <li class="divider"></li>
-            <li><a href="{{pathFor 'callManagement'}}">Call Management</a></li>
-            <li class="divider"></li>
-            <li><a href="{{pathFor 'endCall'}}">End Call</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Call Experience <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="{{pathFor 'callProfessionalism'}}">Call Professionalism</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Email Response <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="{{pathFor 'timeManagement'}}">Time Management</a></li>
-            <li class="divider"></li>
-            <li><a href="{{pathFor 'clarification'}}">Clarification</a></li>
-            <li class="divider"></li>
-            <li><a href="{{pathFor 'qBenefits'}}">Q Benefits</a></li>
-            <li class="divider"></li>
-            <li><a href="{{pathFor 'personalization'}}">Personalization</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Email Experience <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="{{pathFor 'emailProfessionalism'}}">Email Professionalism</a></li>
-          </ul>
-        </li>
-      </ul> -->
-    <!-- </div>/.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+    </div>
   </nav>
 </template>
